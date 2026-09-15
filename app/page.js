@@ -445,6 +445,56 @@ export default function Home() {
       </section>
       <NoHorrorStories />
       <PackageCarousel />
+      <footer id="contact" className={styles.siteFooter}>
+        <span className={styles.footerWatermark} aria-hidden="true">LASER ME OUT</span>
+        <Image
+          className={`${styles.footerLaser} ${styles.footerLaserLeft}`}
+          src="/images/flying-laser-footer-left.webp"
+          alt=""
+          width={600}
+          height={600}
+          sizes="(max-width: 767px) 38vw, 17vw"
+        />
+        <div className={styles.footerInner}>
+          <a className={styles.footerLogo} href="#top" aria-label="Laser Me Out home">
+            <span>Laser</span><span>Me</span><span>Out</span>
+          </a>
+          <div className={styles.footerLinks}>
+            <section aria-labelledby="footer-visit-title">
+              <h2 id="footer-visit-title">Most visited</h2>
+              <a href="#treatments">Bye hair</a>
+              <a href="#package-carousel">Guilt-free pricing</a>
+              <a href="#treatments">PCOS membership</a>
+              <a href="#terms">Terms &amp; conditions</a>
+            </section>
+            <section aria-label="More Laser Me Out links">
+              <a href="#about">Team LMO</a>
+              <a href="#talk">LMO talk</a>
+              <a href="#contact">Contact us</a>
+              <a href="#faqs">FAQs</a>
+            </section>
+          </div>
+          <nav className={styles.footerSocials} aria-label="Social media">
+            <a href="https://www.instagram.com/lasermeout" target="_blank" rel="noreferrer" aria-label="Instagram"><span aria-hidden="true">◎</span></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><span aria-hidden="true">f</span></a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok"><span aria-hidden="true">♪</span></a>
+            <a href="https://wa.me/" target="_blank" rel="noreferrer" aria-label="WhatsApp"><span aria-hidden="true">◔</span></a>
+          </nav>
+        </div>
+        <Image
+          className={`${styles.footerLaser} ${styles.footerLaserRight}`}
+          src="/images/hero-flying-laser.png"
+          alt=""
+          width={1293}
+          height={1200}
+          sizes="(max-width: 767px) 46vw, 23vw"
+        />
+        <div className={styles.footerBar}>
+          <span>© Laser Me Out 2026</span>
+          <a id="terms" href="#terms">Legal</a>
+          <span>Designed &amp; developed by Wagemut.studio</span>
+        </div>
+      </footer>
     </>
   );
 }

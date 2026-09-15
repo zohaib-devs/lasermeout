@@ -1,0 +1,180 @@
+.rail {
+  align-items: center;
+  background: rgb(249 249 243 / 94%);
+  backdrop-filter: blur(10px);
+  color: var(--ink);
+  display: flex;
+  height: 4.75rem;
+  inset: 0 0 auto;
+  justify-content: space-between;
+  padding: 0 .875rem;
+  position: fixed;
+  z-index: 40;
+}
+
+.logo {
+  align-items: center;
+  color: var(--acid-yellow);
+  display: flex;
+  font-size: .98rem;
+  font-weight: 900;
+  letter-spacing: -.09em;
+  line-height: .78;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: translateY(-.12rem);
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: row;
+  gap: .16em;
+  isolation: isolate;
+  max-width: none;
+  white-space: nowrap;
+}
+
+.wordmark span {
+  display: block;
+  position: relative;
+  text-shadow: 1px 1px #000, 2px 1px #000, 3px 2px #000, 4px 2px #000, 5px 3px #000, 6px 3px #000;
+  z-index: 1;
+}
+
+.menuButton {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: .65rem;
+  justify-content: center;
+  min-height: 2.75rem;
+  min-width: 5.5rem;
+  padding: .5rem;
+  text-transform: uppercase;
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  gap: .25rem;
+  margin-left: auto;
+}
+
+.menuLabel { font-size: .68rem; font-weight: 800; letter-spacing: .09em; }
+
+.menuIcon { display: grid; gap: .28rem; width: 1.35rem; }
+.menuIcon i { background: currentColor; display: block; height: 2px; transition: transform .25s ease; width: 100%; }
+.menuIconOpen i:first-child { transform: translateY(.2rem) rotate(45deg); }
+.menuIconOpen i:last-child { transform: translateY(-.2rem) rotate(-45deg); }
+
+.consultation {
+  align-items: center;
+  background: var(--acid-yellow);
+  border-radius: 999px;
+  color: var(--ink);
+  display: flex;
+  font-size: .64rem;
+  font-weight: 900;
+  gap: .35rem;
+  justify-content: center;
+  letter-spacing: .045em;
+  min-height: 2.75rem;
+  padding: .55rem .8rem;
+  position: static;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform .24s ease;
+  white-space: nowrap;
+}
+
+.consultationFull { display: none; }
+
+.instagram { display: none; }
+
+.overlay {
+  background: var(--acid-yellow);
+  display: grid;
+  inset: 0;
+  opacity: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity .35s ease, visibility .35s ease;
+  visibility: hidden;
+  z-index: 30;
+}
+
+.overlayOpen { opacity: 1; pointer-events: auto; visibility: visible; }
+
+.menuArt {
+  color: var(--orange);
+  display: flex;
+  font-size: clamp(7rem, 28vw, 20rem);
+  font-weight: 900;
+  justify-content: space-between;
+  letter-spacing: -.14em;
+  line-height: .72;
+  overflow: hidden;
+  padding: 5.25rem 1rem 0;
+  pointer-events: none;
+}
+.menuArt span:last-child { font-size: .32em; letter-spacing: 0; transform: rotate(18deg); }
+
+.menuPanel { align-self: end; color: var(--ink); padding: 1.5rem 1.25rem 2rem; }
+.kicker { font-size: .68rem; font-weight: 800; letter-spacing: .1em; margin: 0 0 1rem; text-transform: uppercase; }
+.menuPanel ul { list-style: none; margin: 0; padding: 0; }
+.menuPanel li { border-top: 1px solid color-mix(in srgb, var(--ink) 28%, transparent); }
+.menuPanel li:last-child { border-bottom: 1px solid color-mix(in srgb, var(--ink) 28%, transparent); }
+.menuPanel a { align-items: baseline; color: inherit; display: flex; font-size: clamp(1.9rem, 9vw, 3.5rem); font-weight: 900; gap: .75rem; letter-spacing: -.075em; line-height: .98; padding: .42rem 0; text-decoration: none; text-transform: uppercase; }
+.menuPanel a span { font-size: .56rem; font-weight: 700; letter-spacing: 0; }
+.menuFooter { display: flex; flex-direction: column; font-size: .75rem; font-weight: 700; gap: .35rem; margin-top: 1.25rem; text-transform: uppercase; }
+.menuFooter a { font-size: inherit; font-weight: inherit; letter-spacing: .03em; line-height: 1.4; padding: 0; text-decoration: underline; }
+
+@media (min-width: 992px) {
+  .rail {
+    background: transparent;
+    backdrop-filter: none;
+    height: 5.5rem;
+    inset: 0 0 auto;
+    justify-content: flex-start;
+    padding: 0 clamp(1.5rem, 4vw, 4.5rem);
+    position: absolute;
+    width: 100%;
+  }
+  .actions { left: 50%; margin-left: 0; position: absolute; right: auto; transform: translateX(-50%); }
+  .logo { font-size: 1.28rem; line-height: .78; text-align: left; }
+  .wordmark { max-width: none; }
+  .wordmark span { text-shadow: 1px 1px #000, 2px 1px #000, 3px 2px #000, 4px 2px #000, 5px 3px #000, 6px 3px #000, 7px 4px #000, 8px 4px #000; }
+  .menuButton { margin-left: 0; min-height: 3rem; min-width: 6rem; }
+  .consultation {
+    font-size: .68rem;
+    gap: .65rem;
+    min-height: 3rem;
+    padding: .7rem 1.15rem;
+    transition: transform .24s ease;
+  }
+  .consultationFull { display: inline; }
+  .consultationShort { display: none; }
+  .consultation:hover { background: var(--acid-yellow); color: var(--ink); transform: scale(.82); }
+  .instagram { display: none; }
+  .overlay { grid-template-columns: minmax(15rem, 37vw) 1fr; padding-left: 0; }
+  .menuArt { padding: 3rem 1rem 3rem 2rem; }
+  .menuPanel { align-self: stretch; background: var(--paper); display: flex; flex-direction: column; justify-content: center; padding: 3rem clamp(2.5rem, 6vw, 7rem); }
+  .menuPanel a { font-size: clamp(2.75rem, 4.5vw, 5rem); padding: .22rem 0; transition: color .2s ease, padding-left .2s ease; }
+  .menuPanel li a:hover { color: var(--orange); padding-left: .5rem; }
+  .menuFooter { bottom: 3rem; flex-direction: row; justify-content: space-between; left: clamp(2.5rem, 6vw, 7rem); position: absolute; right: clamp(2.5rem, 6vw, 7rem); }
+}
+
+@media (max-width: 479px) {
+  .consultation { font-size: .62rem; min-width: 44px; padding-inline: .75rem; }
+  .menuButton { min-width: 44px; padding-inline: .5rem; }
+  .menuLabel { display: none; }
+  .menuArt { padding-top: 4.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { .rail, .overlay, .menuIcon i, .menuPanel a, .consultation { transition: none; } }

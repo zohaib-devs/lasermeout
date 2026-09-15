@@ -1,0 +1,224 @@
+.section {
+  background: #f5f4ed;
+  overflow: hidden;
+  padding: 3rem 0 5rem;
+}
+
+.visuallyHidden {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem max(1.25rem, calc(50vw - 9.25rem));
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.track::-webkit-scrollbar { display: none; }
+
+.card {
+  --surface: #f44b14;
+  --text: #ffff00;
+  --badge: #ffff00;
+  --price: #efa9da;
+  background: var(--surface);
+  border-radius: 2.3rem;
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  flex: 0 0 min(76vw, 34rem);
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) 5.5rem;
+  min-height: 31rem;
+  opacity: .46;
+  padding: 4.3rem 1.5rem 1.8rem;
+  position: relative;
+  scroll-snap-align: center;
+  transform: scale(.92);
+  transition: filter 440ms ease, opacity 440ms ease, transform 440ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.card:not(.active) { filter: blur(4px); }
+
+.card.active {
+  filter: none;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.yellow { --surface: #ffff00; --text: #f44b14; --badge: #b9a6d0; --price: #f44b14; }
+.pink { --surface: #efa9da; --text: #f44b14; --badge: #f44b14; --price: #ffff00; }
+.lilac { --surface: #b9a6d0; --text: #ffff00; --badge: #efa9da; --price: #f44b14; }
+
+.badge {
+  background: var(--badge);
+  border-radius: 0 0 1.8rem 1.8rem;
+  color: var(--surface);
+  font-size: .68rem;
+  font-weight: 900;
+  min-height: 3.6rem;
+  padding: 1.15rem .8rem;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  top: 0;
+  width: 48%;
+}
+
+.details { min-width: 0; }
+.duration { font-size: .75rem; font-weight: 900; margin: 0 0 .75rem; }
+
+.details h3 {
+  font-size: clamp(2rem, 8vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -.07em;
+  line-height: .88;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.details h3 span { display: block; }
+
+.description {
+  font-size: .92rem;
+  line-height: 1.18;
+  margin: 1.8rem 0 0;
+  max-width: 30ch;
+}
+
+.priceList {
+  align-content: start;
+  display: grid;
+  gap: 1rem;
+  margin: 4.6rem 0 0;
+}
+
+.priceList div { display: grid; gap: .3rem; }
+.priceList dt { font-size: .7rem; font-weight: 900; }
+.priceList dd { margin: 0; }
+
+.priceList dd {
+  background: var(--price);
+  border-radius: .55rem;
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -.06em;
+  padding: .45rem .55rem;
+  width: fit-content;
+}
+
+.links {
+  align-self: end;
+  display: grid;
+  gap: .35rem;
+  grid-column: 1 / -1;
+}
+
+.links a {
+  color: var(--text);
+  font-size: .72rem;
+  font-weight: 900;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.links a:first-child { font-size: .93rem; }
+.links a:hover { text-decoration: underline; }
+
+.controls { display: flex; gap: 2.2rem; justify-content: center; margin-top: 2.5rem; }
+
+.controls button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #111;
+  cursor: pointer;
+  display: grid;
+  font-size: 2rem;
+  height: 3rem;
+  place-items: center;
+  transition: transform 180ms ease;
+  width: 3rem;
+}
+
+.controls button:hover { transform: scale(1.18); }
+.controls button:focus-visible, .links a:focus-visible { outline: 3px solid #efa9da; outline-offset: 3px; }
+
+@media (min-width: 768px) {
+  .section { padding: 4rem 0 6rem; }
+
+  .track {
+    gap: 3rem;
+    padding-left: calc(50vw - 24.5rem);
+    padding-right: calc(50vw - 24.5rem);
+  }
+
+  .card {
+    border-radius: 3rem;
+    flex-basis: 49rem;
+    gap: 3rem;
+    grid-template-columns: minmax(0, 1fr) 10.5rem;
+    min-height: 32rem;
+    padding: 4.4rem 4.1rem 3.6rem;
+  }
+
+  .badge { border-radius: 0 0 2.4rem 2.4rem; font-size: .95rem; min-height: 5.2rem; padding-top: 1.8rem; width: 35%; }
+  .duration { font-size: .9rem; }
+  .details h3 { font-size: clamp(2.7rem, 4.5vw, 4rem); }
+  .description { font-size: 1.2rem; margin-top: 2rem; }
+  .priceList { gap: 1.25rem; margin-top: 3.6rem; }
+  .priceList dt { font-size: .86rem; }
+  .priceList dd { font-size: 1.55rem; }
+  .links a { font-size: .9rem; }
+  .links a:first-child { font-size: 1.25rem; }
+  .controls { margin-top: 3.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track { scroll-behavior: auto; }
+  .card, .controls button { transition: none; }
+}
+
+/* Cards are intentionally 70% of the original carousel scale. */
+.track { padding-left: max(1.25rem, calc(50vw - 6.5rem)); padding-right: max(1.25rem, calc(50vw - 6.5rem)); }
+.card { border-radius: 1.6rem; flex-basis: min(53vw, 23.8rem); gap: 1.05rem; grid-template-columns: minmax(0, 1fr) 3.85rem; min-height: 21.7rem; padding: 3rem 1.05rem 1.25rem; }
+.badge { border-radius: 0 0 1.25rem 1.25rem; font-size: .58rem; min-height: 2.5rem; padding: .8rem .56rem; }
+.duration { font-size: .58rem; margin-bottom: .52rem; }
+.details h3 { font-size: clamp(1.4rem, 5.6vw, 2.38rem); }
+.description { font-size: .68rem; margin-top: 1.25rem; }
+.priceList { gap: .7rem; margin-top: 3.2rem; }
+.priceList div { gap: .2rem; }
+.priceList dt { font-size: .55rem; }
+.priceList dd { border-radius: .4rem; font-size: .88rem; padding: .32rem .38rem; }
+.links { gap: .24rem; }
+.links a { font-size: .54rem; }
+.links a:first-child { font-size: .68rem; }
+
+@media (min-width: 768px) {
+  .track { gap: 2.1rem; padding-left: calc(50vw - 17.15rem); padding-right: calc(50vw - 17.15rem); }
+  .card { border-radius: 2.1rem; flex-basis: 34.3rem; gap: 2.1rem; grid-template-columns: minmax(0, 1fr) 7.35rem; min-height: 22.4rem; padding: 3.08rem 2.87rem 2.52rem; }
+  .badge { border-radius: 0 0 1.68rem 1.68rem; font-size: .67rem; min-height: 3.64rem; padding-top: 1.26rem; }
+  .duration { font-size: .63rem; }
+  .details h3 { font-size: clamp(1.9rem, 3.15vw, 2.8rem); }
+  .description { font-size: .84rem; margin-top: 1.4rem; }
+  .priceList { gap: .88rem; margin-top: 2.52rem; }
+  .priceList dt { font-size: .6rem; }
+  .priceList dd { font-size: 1.08rem; }
+  .links a { font-size: .63rem; }
+  .links a:first-child { font-size: .88rem; }
+}

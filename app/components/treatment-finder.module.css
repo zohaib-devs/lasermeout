@@ -1,0 +1,91 @@
+.section {
+  background: #ededed;
+  display: grid;
+  gap: 2.5rem;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: visible;
+  /* Keep the opening copy clear of the fixed mobile/tablet navigation. */
+  padding: calc(4.75rem + 1.25rem) 1.25rem 3rem;
+  position: relative;
+}
+
+.machine {
+  animation: float 4.4s linear infinite;
+  height: auto;
+  pointer-events: none;
+  position: absolute;
+  right: clamp(.5rem, 5vw, 5rem);
+  top: clamp(-8rem, -10vw, -5rem);
+  transform: rotate(-14deg);
+  width: clamp(11.5rem, 31.68vw, 25.92rem);
+  z-index: 1;
+}
+
+.intro { display: grid; gap: .85rem; justify-items: center; margin: 0 auto; max-width: 45rem; text-align: center; }
+.intro, .finder, .footerNote { position: relative; z-index: 2; }
+.intro h2 { color: #0d0d0d; font-size: clamp(.72rem, 1.44vw, 1.17rem); font-weight: 900; letter-spacing: -.045em; line-height: 1; margin: 0; text-transform: uppercase; }
+.tagline { color: #c8a4d7; font-size: clamp(2.1rem, 4.76vw, 3.85rem); font-weight: 900; letter-spacing: -.055em; line-height: .95; margin: .4rem 0 0; max-width: 24ch; text-transform: uppercase; }
+.forever { background: #c8a4d7; color: #fff; display: inline-block; padding: .04em .16em .08em; }
+.introCopy { color: var(--ink); font-size: .875rem; font-weight: 400; line-height: 1.5; margin: .35rem 0 0; max-width: 54ch; }
+.mustHave { color: var(--ink); display: grid; font-size: clamp(2.25rem, 6.5vw, 5.5rem); font-weight: 900; letter-spacing: -.07em; line-height: .8; margin: .45rem 0 0; text-align: center; text-transform: uppercase; }
+.mustHave strong { color: var(--orange); font: inherit; }
+.featuredAreaButtons { align-items: center; display: grid; gap: .625rem; grid-template-columns: auto auto; justify-content: center; margin: .25rem auto 0; }
+.featuredAreaStack, .featuredArrows { display: grid; gap: .5rem; }
+.featuredArea, .featuredAreaActive { backface-visibility: hidden; border: 2px solid var(--ink); border-radius: 999px; contain: paint; cursor: pointer; font: inherit; font-size: .8rem; font-weight: 900; min-height: 2.75rem; min-width: 9rem; padding: .55rem 1.25rem; text-transform: uppercase; transition: transform .28s ease, background-color .28s ease, color .28s ease; will-change: transform; }
+.featuredArea { background: transparent; color: var(--ink); }
+.featuredAreaActive { background: var(--ink); color: var(--paper); }
+.featuredArea:hover, .featuredAreaActive:hover { transform: translateY(-2px); }
+.featuredArrows button { align-items: center; background: transparent; border: 2px solid var(--ink); border-radius: 50%; color: var(--ink); cursor: pointer; display: flex; font-size: 1.25rem; justify-content: center; min-height: 2.75rem; min-width: 2.75rem; padding: 0; transition: background .2s ease, color .2s ease; }
+.featuredArrows button:hover { background: var(--ink); color: var(--paper); }
+.bodyArt { aspect-ratio: 1; background-repeat: no-repeat; background-size: 300% 300%; justify-self: center; margin: .75rem auto 0; max-width: 10rem; width: min(45vw, 10rem); }
+.womenArt { background-image: url("/images/body-parts-women.png"); }
+.menArt { background-image: url("/images/body-parts-men.png"); }
+.womenArt.face { background-image: url("/images/woman-face.png"); background-position: center; background-size: contain; }
+.womenArt.underarms { background-image: url("/images/underarms-woman.svg"); background-position: center; background-size: contain; }
+.womenArt.arms { background-image: url("/images/arms-woman.svg"); background-position: center; background-size: contain; }
+.womenArt.stomach { background-image: url("/images/stomach-woman.svg"); background-position: center; background-size: contain; }
+.womenArt.chest { background-image: url("/images/chest-woman.svg"); background-position: center; background-size: contain; }
+.womenArt.back { background-image: url("/images/back-woman.svg"); background-position: center; background-size: contain; }
+.womenArt.legs { background-image: url("/images/lowerlegs-woman.svg"); background-position: center; background-size: contain; }
+.womenArt.bikini { background-image: url("/images/bikini-woman.png"); background-position: center; background-size: contain; }
+.menArt.face { background-image: url("/images/face-man.svg"); background-position: center; background-size: contain; }
+.menArt.neck { background-image: url("/images/neck-man.svg"); background-position: center; background-size: contain; }
+.menArt.beardLine { background-image: url("/images/face-01-man.svg"); background-position: center; background-size: contain; }
+.menArt.forearms { background-image: url("/images/arms-man.svg"); background-position: center; background-size: contain; }
+.menArt.arms { background-image: url("/images/arms-full-man.svg"); background-position: center; background-size: contain; }
+.menArt.back { background-image: url("/images/back-man.svg"); background-position: center; background-size: contain; }
+.menArt.legs { background-image: url("/images/legs-man.svg"); background-position: center; background-size: contain; }
+.menArt.stomach { background-image: url("/images/stomach-man.svg"); background-position: center; background-size: contain; }
+.menArt.brazilian { background-image: url("/images/brazilian-man.svg"); background-position: center; background-size: contain; }
+.menArt.periAnal { background-image: url("/images/male-body-parts.png"); background-position: 33.333% 100%; background-size: 400% 300%; }
+.face { background-position: 0% 0%; }
+.underarms { background-position: 50% 0%; }
+.arms { background-position: 100% 0%; }
+.stomach { background-position: 0% 50%; }
+.chest { background-position: 50% 50%; }
+.back { background-position: 100% 50%; }
+.legs { background-position: 0% 100%; }
+.shoulders { background-position: 50% 100%; }
+.fullBody { background-position: 100% 100%; }
+
+.finder { display: grid; gap: 1rem; margin: 0 auto; max-width: 64rem; width: 100%; }
+.tabs { display: flex; gap: .5rem; justify-content: center; }
+.tab, .tabActive { border: 2px solid var(--ink); border-radius: 999px; cursor: pointer; font: inherit; font-size: .875rem; font-weight: 900; min-height: 2.75rem; padding: .55rem 1.5rem; text-transform: uppercase; transition: background .2s ease, color .2s ease, transform .2s ease; }
+.tab { background: transparent; color: var(--ink); }
+.tabActive { background: var(--ink); color: var(--paper); }
+.tab:hover { transform: translateY(-2px); }
+.footerNote { font-size: .8rem; font-weight: 800; letter-spacing: .02em; margin: 0 auto; max-width: 45ch; text-align: center; text-transform: uppercase; }
+
+@keyframes float { 0%, 100% { transform: translateY(6%) rotate(-14deg); } 50% { transform: translateY(-6%) rotate(-14deg); } }
+
+@media (min-width: 768px) {
+  .section { gap: 3.5rem; padding-inline: clamp(2rem, 7vw, 7rem); }
+  .footerNote { margin-top: -1rem; }
+}
+
+@media (min-width: 992px) {
+  .section { padding-top: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { .machine { animation: none; } .tab, .tabActive { transition: none; } }

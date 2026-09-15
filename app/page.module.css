@@ -1,0 +1,866 @@
+.hero {
+  --hero-display-size: clamp(3.248rem, 15.6vw, 7.5rem);
+  --hero-model-size: clamp(14.4rem, 57.6vw, 18.4rem);
+  background-image: url("/images/hero-sky-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  isolation: isolate;
+  overflow: hidden;
+  place-items: center;
+  min-height: 60svh;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero::after {
+  background: linear-gradient(to bottom, transparent, #ad6994);
+  bottom: 0;
+  content: "";
+  height: 28%;
+  inset-inline: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.heroTitle {
+  align-items: center;
+  color: var(--orange);
+  display: flex;
+  flex-direction: column;
+  gap: .07em;
+  font-size: var(--hero-display-size);
+  font-weight: 900;
+  letter-spacing: -.1em;
+  line-height: .82;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 65.6%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.heroTitle span:first-child,
+.heroTitle span:nth-child(3) {
+  font-size: .46em;
+  letter-spacing: -.075em;
+}
+
+.heroModel {
+  animation: modelFloat 4.4s linear infinite;
+  height: var(--hero-model-size);
+  left: 50%;
+  max-width: 72%;
+  position: absolute;
+  top: 25.6%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: 2;
+}
+
+.heroLaser {
+  animation: laserFloat 4.4s linear infinite;
+  height: auto;
+  left: 5%;
+  position: absolute;
+  top: 9.6%;
+  width: clamp(6rem, 28vw, 10rem);
+  z-index: 4;
+}
+
+.heroLocations {
+  color: var(--ink);
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .18em;
+  position: absolute;
+  right: 2.75%;
+  text-transform: uppercase;
+  top: 3%;
+  transform: rotate(90deg) translateX(100%);
+  transform-origin: top right;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+@keyframes modelFloat {
+  0%, 100% { transform: translate(-50%, -52%); }
+  50% { transform: translate(-50%, -48%); }
+}
+
+@keyframes laserFloat {
+  0%, 100% { transform: translateX(2.1%); }
+  50% { transform: translateX(-2.1%); }
+}
+
+.sopranoSection {
+  align-items: center;
+  background: #ad6994;
+  display: grid;
+  gap: .8085rem;
+  grid-template-columns: max-content max-content max-content;
+  height: auto;
+  justify-content: center;
+  margin-top: 0;
+  min-height: 0;
+  overflow: visible;
+  padding: clamp(.0625rem, calc(2.5vw - .9375rem), 1.0625rem) .7rem;
+  position: relative;
+  z-index: 2;
+}
+
+.sopranoSection > * {
+  margin-top: clamp(-7rem, -10vw, -3rem);
+  position: relative;
+  top: 0;
+}
+
+.sopranoApplicator,
+.sopranoHandpiece {
+  height: auto;
+  justify-self: center;
+  max-height: 7.28rem;
+  object-fit: contain;
+  width: auto;
+}
+
+.sopranoApplicator { justify-self: end; transform: translateX(1.14rem) rotate(10deg); }
+.sopranoHandpiece { justify-self: start; transform: translateX(-1.14rem) rotate(-10deg); }
+
+.sopranoContent {
+  align-items: center;
+  display: grid;
+  gap: .35rem;
+  grid-template-columns: max-content 1px max-content;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.sopranoTitle {
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(.945rem, 3.85vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -.075em;
+  line-height: .8;
+  margin: 0;
+}
+
+.sopranoDivider { align-self: stretch; background: var(--ink); }
+
+.sopranoCopy {
+  color: var(--ink);
+  font-size: clamp(.945rem, 3.85vw, 1.75rem);
+  font-weight: 900;
+  letter-spacing: .015em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.whiteSection {
+  align-items: start;
+  background: #fff;
+  display: grid;
+  justify-items: center;
+  min-height: 100svh;
+  padding: clamp(6rem, 14vw, 9rem) 1rem 4rem;
+  position: relative;
+}
+
+.consultationTitle {
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(1.6rem, 5.6vw, 4.4rem);
+  font-weight: 400;
+  gap: 10px;
+  letter-spacing: -.08em;
+  line-height: .9;
+  margin: 0;
+  text-align: center;
+}
+
+.consultationAccent {
+  color: #c8a4d7;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.consultationLead { font-size: .7em; }
+
+.locationImages {
+  height: clamp(20rem, 52vw, 38rem);
+  margin-bottom: 50px;
+  margin-top: clamp(.75rem, 2vw, 1.5rem);
+  max-width: 56rem;
+  position: relative;
+  width: min(96vw, 56rem);
+}
+
+.londonImageWrap,
+.birminghamImageWrap {
+  aspect-ratio: 1;
+  position: absolute;
+}
+
+.londonImageWrap {
+  bottom: 0;
+  left: 2%;
+  width: 52%;
+  z-index: 1;
+}
+
+.birminghamImageWrap {
+  right: 1%;
+  top: 3%;
+  width: 60%;
+  z-index: 2;
+}
+
+.locationImage {
+  filter: grayscale(1);
+  object-fit: contain;
+  transition: filter 280ms ease;
+}
+
+.londonImageWrap:hover .locationImage,
+.birminghamImageWrap:hover .locationImage {
+  filter: grayscale(0);
+}
+
+.locationLabel {
+  background: #ff4b2b;
+  border: 2px solid #111;
+  border-radius: 999px;
+  color: #fff;
+  font-size: clamp(1.1rem, 3.6vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: 1;
+  padding: .45em 1.25em;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.londonLabel {
+  bottom: -2%;
+  left: 4%;
+  transform: rotate(-8deg);
+}
+
+.birminghamLabel {
+  bottom: 15%;
+  right: 2%;
+  transform: rotate(16deg);
+  transform-origin: left center;
+}
+
+.blackContainer {
+  align-items: center;
+  background: #111;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  margin: -40px auto;
+  max-width: calc(100% - 2rem);
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  position: relative;
+  width: fit-content;
+  z-index: 3;
+}
+
+.blackContainerText {
+  animation: outlineBlink 7.9s ease-in-out infinite;
+  color: #000;
+  font-size: clamp(1rem, 3vw, 1.65rem);
+  font-weight: 900;
+  letter-spacing: .08em;
+  line-height: 1;
+  text-shadow: 0 0 .5rem #ffe46b, 0 0 1.2rem rgb(255 200 0 / 80%), 0 0 2.25rem rgb(255 183 0 / 60%);
+  text-transform: uppercase;
+  -webkit-text-stroke: 1.5px #ffd23f;
+  white-space: nowrap;
+}
+
+.seriousKit {
+  background: #ededed;
+  color: var(--ink);
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: 3rem 1.25rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.seriousKitIntro {
+  display: grid;
+  justify-items: center;
+  max-width: 70rem;
+}
+
+.seriousKitEyebrow {
+  font-size: .76rem;
+  font-weight: 900;
+  letter-spacing: .02em;
+  margin: 0 0 2.5rem;
+  text-transform: uppercase;
+}
+
+.seriousKit h2 {
+  display: grid;
+  font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif;
+  font-size: clamp(3.1rem, 12.5vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -.085em;
+  line-height: .76;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.seriousKit h2 span:first-child { color: #f4a7d9; }
+.seriousKit h2 span:last-child { background: #f4a7d9; color: var(--paper); justify-self: center; padding: .05em .14em .1em; }
+
+.seriousKitCopy {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: clamp(2rem, 5vw, 3.5rem) 0 0;
+  max-width: 46ch;
+}
+
+.seriousKitProduct {
+  align-items: end;
+  display: grid;
+  justify-items: center;
+  margin-top: auto;
+  min-height: 15rem;
+  position: relative;
+  width: min(100%, 26rem);
+}
+
+.sopranoWordmark {
+  display: grid;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: .85;
+  margin: 0 0 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.sopranoWordmark span { font-size: clamp(2.2rem, 8vw, 3.4rem); font-weight: 700; }
+.sopranoWordmark small { font-family: "Trebuchet MS", sans-serif; font-size: .7rem; letter-spacing: .28em; margin-left: auto; text-transform: uppercase; }
+
+.seriousKitMachine {
+  align-self: end;
+  filter: drop-shadow(0 1rem 1.2rem rgb(0 0 0 / 28%));
+  height: auto;
+  margin-top: -1rem;
+  transform: rotate(-10deg);
+  width: min(46vw, 13rem);
+}
+
+.smoothSkin {
+  background: var(--paper);
+  color: var(--ink);
+  display: grid;
+  isolation: isolate;
+  justify-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: 4rem 1.25rem;
+  position: relative;
+  text-align: center;
+}
+
+.smoothSkinEyebrow {
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: .03em;
+  margin: 0 0 2.5rem;
+  text-transform: uppercase;
+}
+
+.smoothSkin h2 {
+  color: var(--orange);
+  display: grid;
+  font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif;
+  font-size: clamp(3rem, 13.6vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -.075em;
+  line-height: .78;
+  margin: 0;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.smoothSkin h2 span:last-child { display: flex; gap: .12em; justify-content: center; }
+.smoothSkin h2 strong { background: var(--orange); color: var(--paper); font: inherit; padding: .02em .11em .08em; }
+
+.smoothSkinCopy {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: clamp(2rem, 5vw, 3rem) 0;
+  max-width: 44ch;
+  z-index: 1;
+}
+
+.smoothSkinLinks { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; z-index: 1; }
+.smoothSkinLinks a { border-bottom: 1px solid var(--ink); color: var(--ink); font-size: .76rem; font-weight: 900; padding-bottom: .35rem; text-decoration: none; text-transform: uppercase; }
+.smoothSkinLinks span { font-size: 1.1rem; margin-left: .75rem; }
+
+.smoothSkinWatermark {
+  bottom: -3rem;
+  color: rgb(13 13 13 / 3%);
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: clamp(6rem, 25vw, 18rem);
+  font-weight: 900;
+  left: 50%;
+  letter-spacing: -.12em;
+  position: absolute;
+  transform: translateX(-50%) rotate(25deg);
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.resultsComparison {
+  background: var(--paper);
+  display: grid;
+  justify-items: center;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.whyChooseUs {
+  background: var(--paper);
+  display: grid;
+  isolation: isolate;
+  min-height: 44rem;
+  overflow: hidden;
+  padding: 2rem 1.25rem 4rem;
+  place-items: center;
+  position: relative;
+}
+
+.whyChooseUsCard {
+  background: #f3a5d5;
+  border-radius: 2.35rem;
+  box-sizing: border-box;
+  display: grid;
+  gap: 1rem;
+  max-width: 55rem;
+  min-height: 31rem;
+  overflow: visible;
+  padding: 5.6rem 1.6rem 1.75rem;
+  position: relative;
+  width: 100%;
+}
+
+.justFacts {
+  align-items: center;
+  background: var(--orange);
+  border-radius: 0 0 0 2.2rem;
+  color: #fff500;
+  display: flex;
+  font-size: .78rem;
+  font-weight: 900;
+  height: 3.9rem;
+  justify-content: center;
+  letter-spacing: -.02em;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+  width: 10.4rem;
+}
+
+.whyChooseUsCopy { align-self: start; position: relative; z-index: 1; }
+.whyChooseUsCopy h2 { color: var(--orange); font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2rem, 8vw, 3rem); font-weight: 900; letter-spacing: -.06em; line-height: .9; margin: 0 0 1.8rem; text-transform: uppercase; }
+.whyChooseUsList { display: grid; gap: .8rem; list-style: none; margin: 0; padding: 0; }
+.whyChooseUsList li { background: #fff500; border-radius: .5rem; color: var(--orange); font-size: clamp(.86rem, 3.4vw, 1.08rem); line-height: 1.15; padding: .42rem .48rem; width: fit-content; }
+.whyChooseUsList strong { font-weight: 900; text-transform: uppercase; }
+.whyChooseUsKit { bottom: -1.8rem; max-width: min(18rem, 74vw); object-fit: contain; position: absolute; right: -4.5rem; width: 100%; z-index: 1; }
+
+.howItWorks { background: var(--paper); display: grid; gap: 3rem; padding: 4.5rem 1.25rem; }
+.howItWorksIntro { display: grid; gap: 2rem; justify-items: center; }
+.rabiaProfile { min-height: 19rem; position: relative; width: min(100%, 23rem); }
+.rabiaImage { bottom: 0; height: auto; left: 50%; object-fit: contain; position: absolute; transform: translateX(-50%); width: min(100%, 20rem); }
+.rabiaBadge { background: #c6b0d5; border-radius: 1.8rem; bottom: -1rem; color: #fff500; display: grid; justify-items: center; left: 50%; padding: .65rem 2.75rem; position: absolute; text-align: center; transform: translateX(-50%); width: max-content; z-index: 1; }
+.rabiaBadge strong { font-size: 1.35rem; font-weight: 900; line-height: 1; text-transform: uppercase; }
+.rabiaBadge span { color: var(--paper); font-size: .6rem; font-weight: 900; text-transform: uppercase; }
+.howItWorksLead { display: grid; max-width: 24rem; position: relative; }
+.howItWorksLead h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.2rem, 9vw, 3.2rem); font-weight: 900; letter-spacing: -.065em; line-height: .85; margin: 0; text-transform: uppercase; white-space: nowrap; }
+.howItWorksLead p { font-size: 1rem; line-height: 1.45; margin: 2rem 2.6rem 0 0; max-width: 25ch; }
+.howItWorksArrow { bottom: 0; font-size: 2rem; position: absolute; right: 0; }
+.howItWorksCard { background: #fff500; border-radius: 2.3rem; box-sizing: border-box; color: var(--orange); display: grid; min-height: 31rem; padding: 5.9rem 1.8rem 2rem; position: relative; }
+.goPro { align-items: center; background: #c6b0d5; border-radius: 0 2.25rem 0 2.25rem; color: #fff500; display: flex; font-size: .78rem; font-weight: 900; height: 4rem; justify-content: center; position: absolute; right: 0; text-transform: uppercase; top: 0; width: 10rem; }
+.howItWorksCard h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.1rem, 8vw, 3rem); font-weight: 900; letter-spacing: -.065em; line-height: .9; margin: 0 0 2rem; text-transform: uppercase; }
+.howItWorksCard p { font-size: 1rem; line-height: 1.5; margin: 0; max-width: 38ch; }
+.howItWorksLinks { align-self: end; display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+.howItWorksLinks a { color: #817695; font-size: .9rem; font-weight: 900; text-decoration: none; text-transform: uppercase; }
+
+.treatmentSteps { background: var(--paper); box-sizing: border-box; display: grid; gap: 1.75rem; grid-auto-columns: min(82vw, 24rem); grid-auto-flow: column; min-height: 100svh; min-width: 100vw; overflow: hidden; padding: 2rem 1.25rem 5rem; position: relative; width: max-content; }
+.treatmentSteps::before { color: rgb(13 13 13 / 2%); content: "LMO"; font-family: "Trebuchet MS", sans-serif; font-size: clamp(10rem, 35vw, 28rem); font-weight: 900; left: 50%; letter-spacing: -.13em; position: absolute; top: 25%; transform: translateX(-50%) rotate(-26deg); z-index: 0; }
+.treatmentStep { background: #c6b0d5; border-radius: 2.25rem; box-sizing: border-box; display: grid; justify-items: center; min-height: 29rem; overflow: hidden; padding: 4.6rem 1.3rem 1.5rem; position: relative; z-index: 1; }
+.stepNumber { align-items: center; background: #f3a5d5; border-radius: 0 0 0 2rem; color: var(--orange); display: flex; font-size: .78rem; font-weight: 900; height: 3.75rem; justify-content: center; position: absolute; right: 0; text-transform: uppercase; top: 0; width: 10rem; }
+.stepIllustration { height: 11rem; object-fit: contain; position: relative; width: 11rem; z-index: 2; }
+.stepGlow { background: linear-gradient(#c6b0d5 0 13%, rgb(255 255 255 / 85%) 13.5% 14.2%, transparent 14.8%), linear-gradient(90deg, #c6b0d5 0 50%, #e7a8d2 50%); border-radius: 7rem 7rem 0 0; bottom: 0; box-shadow: inset 0 -2.5rem 1.9rem rgb(255 115 203 / 58%), inset 0 1.1rem 1rem rgb(255 115 203 / 56%); height: 15.5rem; position: absolute; width: 9.6rem; z-index: 0; }
+.stepCopy { align-self: end; color: #fff500; display: grid; justify-items: center; position: relative; text-align: center; z-index: 2; }
+.stepCopy h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.2rem, 9vw, 3.2rem); font-weight: 900; letter-spacing: -.065em; line-height: .8; margin: 0; text-transform: uppercase; }
+.stepCopy p { font-size: .9rem; font-weight: 800; margin: 1.4rem 0 1.65rem; }
+
+.fuzzFreeZone {
+  align-items: center;
+  background: #ededed;
+  color: var(--ink);
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-columns: minmax(16rem, 78vw);
+  grid-auto-flow: column;
+  isolation: isolate;
+  overflow: visible;
+  padding: 4.5rem 1.25rem 3rem;
+  position: relative;
+  min-width: 100vw;
+  width: max-content;
+}
+
+.fuzzFreeCopy,
+.strawberryFrame { position: relative; z-index: 1; }
+
+.fuzzFreeCopy { display: grid; justify-items: center; max-width: 34rem; }
+.fuzzFreeCopy h2 { color: var(--ink); display: grid; font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(3rem, 15vw, 7.5rem); font-weight: 900; letter-spacing: -.055em; line-height: .8; margin: 0; text-align: center; text-transform: uppercase; }
+.fuzzFreeText { font-size: 1rem; line-height: 1.45; margin: 1.5rem 0; max-width: 27ch; text-align: center; }
+.fuzzFreeCta { align-items: center; background: var(--ink); color: var(--paper); display: flex; font-size: .76rem; font-weight: 900; gap: 1.5rem; justify-content: space-between; min-height: 3rem; padding: .75rem 1rem; text-decoration: none; text-transform: uppercase; transition: transform .2s ease; }
+.fuzzFreeCta:hover { transform: translateY(-.18rem); }
+.fuzzFreeCta span { font-size: 1.25rem; line-height: 1; }
+.strawberryFrame { justify-self: center; margin-top: -.5rem; width: min(80.6vw, 23.4rem); }
+.strawberry { display: block; height: auto; transform: rotate(5deg); width: 100%; }
+.shavingFrame { display: grid; justify-items: center; width: min(96.2vw, 29.9rem); }
+.shavingImage { display: block; height: auto; width: 100%; }
+.shireenFrame { background: #c7c7c7; border: 4px solid var(--ink); display: grid; isolation: isolate; justify-items: center; margin-top: 1rem; padding: .625rem; position: relative; transform: rotate(-10deg); width: min(67.6vw, 13rem); }
+.shireenFrame::before { background: linear-gradient(to bottom, transparent, rgb(200 164 215 / 90%) 22%, rgb(200 164 215 / 75%) 78%, transparent); content: ""; filter: blur(1.4rem); inset-block: -4rem; left: 50%; pointer-events: none; position: absolute; transform: translateX(-50%); width: 65%; z-index: -1; }
+.shireenImageBox { width: 100%; }
+.shireenImage { aspect-ratio: 1; display: block; height: auto; object-fit: cover; width: 100%; }
+.shireenName { color: #ad6994; font-size: .88rem; font-weight: 900; letter-spacing: -.03em; margin: .65rem 0 0; text-align: center; text-transform: uppercase; }
+.shireenRole { color: var(--ink); font-size: .68rem; font-weight: 900; letter-spacing: .08em; margin: .2rem 0 0; text-align: center; text-transform: uppercase; }
+.whoWeHelp { color: var(--ink); display: grid; padding: 1.5rem; width: 100%; }
+.whoWeHelpEyebrow { color: #c8a4d7; font-size: .68rem; font-weight: 900; letter-spacing: .12em; margin: 0 0 .7rem; text-transform: uppercase; }
+.whoWeHelp h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.5rem, 12vw, 4.5rem); font-weight: 900; letter-spacing: -.07em; line-height: .8; margin: 0 0 1.5rem; text-transform: uppercase; }
+.whoWeHelp ul { display: grid; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+.whoWeHelp li { border-top: 1px solid rgb(13 13 13 / 25%); display: grid; gap: .35rem; padding-top: .8rem; }
+.whoWeHelp li strong { color: #c8a4d7; font-size: .78rem; letter-spacing: .035em; text-transform: uppercase; }
+.whoWeHelp li span { font-size: .84rem; line-height: 1.4; }
+.whoWeHelpStrawberry { align-self: center; justify-self: center; width: min(64vw, 15rem); }
+.whoWeHelpStrawberryImage { display: block; height: auto; transform: rotate(5deg); width: 100%; }
+.newbieFriendly { align-self: center; color: var(--ink); display: grid; gap: 1.5rem; padding: 1.5rem; width: 100%; }
+.newbieFriendly h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.5rem, 12vw, 4.5rem); font-weight: 900; letter-spacing: -.07em; line-height: .8; margin: 0 0 1.25rem; text-transform: uppercase; }
+.newbieCopy > p { font-size: 1rem; line-height: 1.5; margin: 0; max-width: 34ch; }
+.newbieActions { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.75rem; }
+.newbieActions a { border-bottom: 1px solid var(--ink); color: var(--ink); font-size: .76rem; font-weight: 900; padding-bottom: .35rem; text-decoration: none; text-transform: uppercase; }
+.newbieActions a span { font-size: 1.1rem; margin-left: .75rem; }
+.newbieRaja { justify-self: center; min-height: 19rem; position: relative; width: min(70vw, 20rem); }
+.rajaBubble { align-items: center; background: var(--paper); border: 2px solid var(--ink); border-radius: 50%; color: var(--orange); display: flex; font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(1.5rem, 7vw, 2.8rem); font-weight: 900; height: 10rem; justify-content: center; line-height: .95; margin: 0; position: absolute; right: 20%; text-align: center; text-shadow: 1px 1px 0 var(--ink); text-transform: uppercase; top: 0; transform: rotate(-8deg); width: 15rem; }
+.rajaBubble::after { background: var(--paper); border-bottom: 2px solid var(--ink); border-right: 2px solid var(--ink); bottom: -.65rem; content: ""; height: 1.5rem; position: absolute; right: 1.75rem; transform: rotate(22deg) skewY(-22deg); width: 1.5rem; }
+.rajaImage { bottom: 0; display: block; height: auto; position: absolute; right: 0; width: min(72%, 15rem); z-index: 1; }
+.rajaBadge { background: var(--orange); bottom: .7rem; color: var(--paper); display: grid; left: 0; margin: 0; padding: .65rem 1rem; position: absolute; text-align: center; text-transform: uppercase; transform: rotate(5deg); width: 78%; z-index: 2; }
+.rajaBadge strong { color: var(--acid-yellow); font-size: 1.35rem; letter-spacing: -.06em; line-height: .85; }
+.rajaBadge span { font-size: .58rem; font-weight: 900; letter-spacing: .04em; margin-top: .2rem; }
+
+.fuzzFreeCopy h2,
+.lmoDifferenceCopy h2,
+.whoWeHelp h2,
+.newbieFriendly h2 {
+  font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif;
+  font-size: clamp(2.5rem, 12vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -.07em;
+  line-height: .8;
+}
+.lmoDifferenceCopy { display: grid; justify-items: center; max-width: 30rem; }
+.lmoDifferenceCopy p { font-size: .75rem; font-weight: 900; letter-spacing: .12em; margin: 0 0 .75rem; text-align: center; text-transform: uppercase; }
+.lmoDifferenceCopy h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.75rem, 14vw, 6rem); font-weight: 900; letter-spacing: -.065em; line-height: .8; margin: 0; text-align: center; text-transform: uppercase; }
+.lmoDifferenceCopy .lmoDifferenceText { font-size: .9rem; font-weight: 400; letter-spacing: 0; line-height: 1.5; margin: 1.25rem 0 0; max-width: 34ch; text-transform: none; }
+
+@keyframes outlineBlink {
+  0%, 22.78%, 45.57% {
+    opacity: .45;
+    text-shadow: 0 0 .35rem #ffe46b, 0 0 .8rem rgb(255 200 0 / 45%);
+  }
+
+  11.39%, 34.18%, 56.96%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 .5rem #ffe46b, 0 0 1.2rem rgb(255 200 0 / 80%), 0 0 2.25rem rgb(255 183 0 / 60%);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero { --hero-model-size: clamp(16rem, calc(33.984vw - 2.832px), 30.4rem); min-height: 100svh; overflow: visible; }
+  .heroTitle { top: 51.6%; }
+  .heroModel { height: var(--hero-model-size); max-width: 38%; top: 53.2%; }
+  .heroLaser { left: 7%; top: 31.7%; width: clamp(9rem, 23vw, 24rem); }
+  .sopranoSection { gap: clamp(.8085rem, 1.32vw, 1.32rem); min-height: 0; padding-block: clamp(.0625rem, calc(2.5vw - .9375rem), 1.0625rem); padding-inline: clamp(1.75rem, 5.6vw, 7rem); }
+  .sopranoApplicator, .sopranoHandpiece { max-height: 10.08rem; }
+  .sopranoApplicator { transform: translateX(1.95rem) rotate(10deg); }
+  .sopranoHandpiece { transform: translateX(-1.95rem) rotate(-10deg); }
+  .sopranoContent { gap: clamp(.35rem, .9vw, .875rem); }
+  .fuzzFreeZone { gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: minmax(12rem, 18rem) minmax(16rem, 22rem) minmax(15rem, 23.4rem); justify-content: start; min-height: 37rem; padding: 5rem clamp(3rem, 10vw, 10rem); }
+  .fuzzFreeCopy { align-self: start; grid-column: 2; grid-row: 1; justify-self: start; margin-top: 1.25rem; }
+  .fuzzFreeCopy h2 { font-size: clamp(2.1rem, 3.25vw, 3.5rem); }
+  .strawberryFrame { align-self: center; grid-column: 1; grid-row: 1; justify-self: end; margin: 0; width: min(28.6vw, 23.4rem); }
+  .shavingFrame { align-self: center; grid-column: 3; grid-row: 1; justify-self: start; width: min(37.18vw, 30.42rem); }
+  .lmoDifferenceCopy { justify-items: center; }
+  .lmoDifferenceCopy h2 { font-size: clamp(2rem, 3vw, 3rem); }
+}
+
+@media (min-width: 1280px) {
+  .fuzzFreeZone { grid-template-columns: 23.4rem 18rem 44rem 29rem 32rem 24rem 55rem; padding-inline: clamp(3rem, 6vw, 7rem); }
+  .strawberryFrame { align-self: center; margin-top: 0; width: min(22.88vw, 18.72rem); }
+  .shavingFrame { align-items: center; align-self: center; grid-template-columns: minmax(0, 30.42rem) minmax(10rem, 13rem); justify-items: initial; margin-top: 0; width: auto; }
+  .shavingImage { grid-column: 1; grid-row: 1; }
+  .lmoDifferenceCopy { align-self: start; grid-column: 2; grid-row: 1; justify-items: center; margin-top: 1.25rem; }
+  .lmoDifferenceCopy p, .lmoDifferenceCopy h2 { text-align: center; }
+  .shireenFrame { align-self: center; grid-column: 4; grid-row: 1; justify-self: start; margin: 0 clamp(2rem, 4vw, 4rem) 0 clamp(3rem, 6vw, 6rem); width: min(100%, 15.6rem); }
+  .whoWeHelp { align-self: start; grid-column: 5; grid-row: 1; margin-top: 1.25rem; padding: 0; width: min(100%, 28rem); }
+  .whoWeHelpStrawberry { align-self: center; grid-column: 6; grid-row: 1; justify-self: start; margin: 0 0 0 clamp(2rem, 4vw, 4rem); width: min(100%, 18rem); }
+  .newbieFriendly { align-items: start; align-self: start; grid-column: 7; grid-row: 1; grid-template-columns: minmax(18rem, 23rem) minmax(22rem, 28rem); justify-content: start; margin-left: clamp(2rem, 4vw, 4rem); margin-top: 1.25rem; min-height: 32rem; padding: 0; width: min(100%, 55rem); }
+  .newbieRaja { align-self: center; justify-self: end; transform: translateY(-30%); width: min(100%, 28rem); }
+  .rajaBubble { font-size: clamp(1.5rem, 3vw, 2.4rem); height: 11rem; left: 0; right: auto; top: 0; width: 18rem; }
+  .rajaImage { right: 0; width: min(62%, 15rem); }
+  .rajaBadge { bottom: .85rem; left: 20%; width: 70%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroModel, .heroLaser, .blackContainerText, .hairRemovalMachine { animation: none; }
+}
+
+@media (min-width: 768px) {
+  .seriousKit { min-height: 100svh; padding: 1.5rem clamp(3rem, 10vw, 10rem) 0; }
+  .seriousKit h2 { font-size: clamp(5rem, 8vw, 8.5rem); }
+  .seriousKitProduct { min-height: 20rem; width: min(100%, 34rem); }
+  .seriousKitMachine { width: min(24vw, 18rem); }
+  .smoothSkin { padding: 2rem clamp(3rem, 10vw, 10rem) 5rem; }
+  .smoothSkin h2 { font-size: clamp(4.5rem, 7vw, 7.5rem); }
+  .resultsComparison { padding: 3rem clamp(3rem, 10vw, 10rem) 5rem; }
+  .whyChooseUs { min-height: 46rem; padding: 5rem clamp(3rem, 10vw, 10rem); }
+  .whyChooseUsCard { border-radius: 2.5rem; grid-template-columns: minmax(0, 1fr) minmax(15rem, 20rem); min-height: 31rem; padding: 6rem 4.6rem 3.5rem; }
+  .justFacts { height: 3.9rem; width: 13rem; }
+  .whyChooseUsCopy h2 { font-size: clamp(2.5rem, 4vw, 3rem); margin-bottom: 2rem; }
+  .whyChooseUsList { gap: .8rem; }
+  .whyChooseUsList li { font-size: clamp(.9rem, 1.5vw, 1.08rem); }
+  .whyChooseUsKit { bottom: -3.6rem; max-width: 22rem; right: -6.5rem; }
+  .howItWorks { align-items: center; gap: clamp(3rem, 9vw, 9rem); grid-template-columns: minmax(19rem, 26rem) minmax(26rem, 28rem); justify-content: center; min-height: 46rem; padding: 4rem clamp(3rem, 10vw, 10rem); }
+  .howItWorksIntro { gap: 2.25rem; justify-items: start; }
+  .rabiaProfile { min-height: 23rem; width: 24rem; }
+  .rabiaImage { width: 23rem; }
+  .rabiaBadge { bottom: -1.15rem; padding: .8rem 3.7rem; }
+  .howItWorksLead { width: 100%; }
+  .howItWorksLead h2 { font-size: clamp(2.8rem, 3.2vw, 3.2rem); }
+  .howItWorksCard { border-radius: 2.4rem; min-height: 33.5rem; padding: 7.4rem 4.7rem 3.2rem; }
+  .goPro { border-radius: 0 2.4rem 0 2.4rem; width: 13rem; }
+  .howItWorksCard h2 { font-size: clamp(2.5rem, 3.2vw, 3rem); }
+  .treatmentSteps { gap: clamp(2rem, 5vw, 5rem); grid-auto-columns: 27rem; justify-content: start; min-height: 100svh; padding: 3rem 6vw 6rem 22vw; }
+  .treatmentStep:first-child { transform: none; }
+  .treatmentStep { min-height: 28.75rem; }
+  .stepIllustration { height: 12.5rem; width: 12.5rem; }
+  .fuzzFreeCopy h2,
+  .lmoDifferenceCopy h2,
+  .whoWeHelp h2,
+  .newbieFriendly h2 { font-size: clamp(2.4rem, 4vw, 3rem); }
+}
+
+.audienceTreatments {
+  background: #f5f4ed;
+  box-sizing: border-box;
+  display: grid;
+  gap: 2rem;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: 4rem 1.25rem;
+  position: relative;
+}
+
+.audienceTreatments::before {
+  color: rgb(13 13 13 / 2.5%);
+  content: "LASER ME OUT";
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: clamp(6rem, 25vw, 18rem);
+  font-weight: 900;
+  left: 50%;
+  line-height: .75;
+  position: absolute;
+  top: 8%;
+  transform: translateX(-50%) rotate(-32deg);
+  white-space: nowrap;
+}
+
+.audienceLaser {
+  height: auto;
+  left: 3%;
+  position: absolute;
+  top: 2rem;
+  transform: rotate(-10deg);
+  width: min(34vw, 10rem);
+  z-index: 2;
+}
+
+.audienceCardHer {
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.audienceCardHer {
+  background: #e9a4d6;
+  border-radius: 2.4rem;
+  min-height: 38rem;
+  overflow: visible;
+  padding: 7rem 2rem 2rem;
+}
+
+.audienceTab {
+  align-items: center;
+  background: var(--orange);
+  border-radius: 0 0 2rem;
+  color: var(--acid-yellow);
+  display: flex;
+  font-size: .78rem;
+  font-weight: 900;
+  height: 4rem;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  width: 11rem;
+}
+
+.audienceHerCopy { color: var(--orange); max-width: 21rem; position: relative; z-index: 2; }
+.audienceHerCopy h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.4rem, 10vw, 4rem); font-weight: 900; letter-spacing: -.065em; line-height: .8; margin: 0; text-transform: uppercase; }
+.audienceHerCopy p { font-size: .95rem; line-height: 1.5; margin: 2rem 0 2.75rem; max-width: 28ch; }
+.audienceHerCopy a { color: var(--paper); font-size: .9rem; font-weight: 900; text-decoration: none; text-transform: uppercase; }
+.audienceFemaleIcon { height: auto; position: absolute; right: 8%; top: 4.8rem; width: min(29vw, 9rem); }
+.audienceWoman { bottom: -1.2rem; height: auto; position: absolute; right: -2%; width: min(54vw, 17rem); z-index: 2; }
+
+@media (min-width: 768px) {
+  .audienceTreatments { gap: 3rem; grid-template-columns: minmax(14rem, 21rem) minmax(30rem, 44rem); min-height: 47rem; padding: 3rem clamp(3rem, 10vw, 10rem) 6rem; }
+  .audienceLaser { left: clamp(6rem, 15vw, 20rem); top: 3rem; width: min(19vw, 17rem); }
+  .audienceCardHer { grid-column: 2; grid-row: 1; height: 30rem; min-height: 0; padding: clamp(5rem, 7vw, 7rem) 12% 2.5rem; width: 100%; }
+  .audienceHerCopy h2 { font-size: clamp(2.8rem, 3.5vw, 3.8rem); }
+  .audienceHerCopy p { font-size: 1rem; margin-block: 2rem 3.4rem; }
+  .audienceFemaleIcon { right: 20%; top: 2.7rem; width: min(13vw, 8rem); }
+  .audienceWoman { bottom: -12.5rem; right: 2%; width: min(18vw, 14rem); }
+}
+
+.audienceCardHim {
+  background: var(--orange);
+  border-radius: 2.4rem;
+  box-sizing: border-box;
+  color: var(--acid-yellow);
+  min-height: 35rem;
+  overflow: hidden;
+  padding: 7rem 2rem 2rem;
+  position: relative;
+}
+
+.audienceCardHim .audienceTab {
+  background: var(--acid-yellow);
+  border-radius: 0 0 2rem 2rem;
+  color: var(--orange);
+  left: auto;
+  right: 0;
+}
+
+.audienceHimCopy { margin-left: auto; position: relative; width: min(52%, 20rem); z-index: 2; }
+.audienceHimCopy h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.3rem, 9vw, 3.8rem); font-weight: 900; letter-spacing: -.065em; line-height: .8; margin: 0; text-align: center; text-transform: uppercase; }
+.audienceHimCopy p { font-size: .9rem; font-weight: 700; line-height: 1.5; margin: 2rem auto 3.25rem; max-width: 25ch; text-align: center; }
+.audienceHimCopy a { color: var(--paper); display: block; font-size: .88rem; font-weight: 900; text-align: center; text-decoration: none; text-transform: uppercase; }
+.audienceMen { bottom: -1rem; height: auto; left: 0; position: absolute; width: min(56vw, 19rem); z-index: 1; }
+.audienceMaleIcon { height: auto; left: 3%; position: absolute; top: 43rem; transform: rotate(-9deg); width: min(29vw, 10rem); z-index: 2; }
+.audienceLaserHim { bottom: 2rem; height: auto; position: absolute; right: 3%; transform: rotate(16deg); width: min(34vw, 10rem); z-index: 2; }
+
+@media (min-width: 768px) {
+  .audienceTreatments { grid-template-rows: 30rem 30rem; min-height: 72rem; row-gap: 4rem; }
+  .audienceCardHim { grid-column: 1 / 3; grid-row: 2; justify-self: start; margin-left: clamp(7rem, 10vw, 12rem); min-height: 0; padding: 9.5rem 5rem 3rem; width: min(100%, 50rem); }
+  .audienceHimCopy { width: 49%; }
+  .audienceHimCopy h2 { font-size: clamp(2.6rem, 3.1vw, 3.4rem); }
+  .audienceHimCopy p { font-size: .92rem; margin-block: 2rem 4rem; }
+  .audienceMen { bottom: -1.2rem; left: 2%; width: min(22vw, 18rem); }
+  .audienceMaleIcon { left: clamp(5rem, 14vw, 17rem); top: 31rem; width: min(12vw, 11rem); }
+  .audienceLaserHim { bottom: 8rem; right: clamp(4rem, 13vw, 16rem); width: min(16vw, 16rem); }
+}
+
+.audienceCardThem {
+  background: var(--acid-yellow);
+  border-radius: 2.4rem;
+  box-sizing: border-box;
+  color: var(--orange);
+  min-height: 35rem;
+  overflow: hidden;
+  padding: 7rem 2rem 2rem;
+  position: relative;
+}
+
+.audienceCardThem .audienceTab { background: #bca6d3; }
+.audienceThemCopy { position: relative; width: min(58%, 22rem); z-index: 2; }
+.audienceThemCopy h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.3rem, 9vw, 3.8rem); font-weight: 900; letter-spacing: -.065em; line-height: .8; margin: 0; text-transform: uppercase; }
+.audienceThemCopy p { font-size: .9rem; line-height: 1.5; margin: 2rem 0 3.25rem; max-width: 27ch; }
+.audienceThemCopy a { color: #817695; font-size: .88rem; font-weight: 900; text-decoration: none; text-transform: uppercase; }
+.audienceThemIcon { height: auto; position: absolute; right: 7%; top: 2.5rem; transform: rotate(12deg); width: min(29vw, 10rem); }
+.audienceGroup { bottom: 0; height: auto; position: absolute; right: 0; width: min(88vw, 33rem); z-index: 2; }
+.audienceLaserThem { height: auto; left: 3%; position: absolute; top: 77rem; transform: rotate(-18deg); width: min(34vw, 10rem); z-index: 2; }
+
+@media (min-width: 768px) {
+  .audienceTreatments { grid-template-rows: 30rem 30rem 30rem; min-height: 106rem; }
+  .audienceCardThem { grid-column: 2; grid-row: 3; min-height: 0; padding: 9.5rem 12% 3rem; }
+  .audienceThemCopy { width: 50%; }
+  .audienceThemCopy h2 { font-size: clamp(2.6rem, 3.1vw, 3.4rem); }
+  .audienceThemCopy p { font-size: .92rem; margin-block: 2rem 4rem; }
+  .audienceThemIcon { right: 11%; top: 2rem; width: min(12vw, 11rem); }
+  .audienceGroup { width: min(32vw, 33rem); }
+  .audienceLaserThem { left: clamp(5rem, 12vw, 15rem); top: 69rem; width: min(17vw, 17rem); }
+}
+
+.lastBit {
+  align-items: center;
+  background: #f5f4ed;
+  box-sizing: border-box;
+  color: var(--ink);
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.lastBitPortrait { min-height: 29rem; position: relative; width: min(78vw, 22rem); }
+.lastBitChloe { bottom: 0; height: auto; left: 50%; position: absolute; transform: translateX(-50%); width: 100%; }
+.lastBitRuler { align-items: center; bottom: 1.35rem; display: flex; height: 2rem; justify-content: center; left: 4%; position: absolute; transform: rotate(-7deg); width: 88%; z-index: 2; }
+.lastBitRuler span { background: var(--acid-yellow); border: 2px solid var(--ink); box-shadow: 0 .12rem 0 var(--ink); height: .9rem; width: 100%; }
+.lastBitRuler p { background: #f5f4ed; font-size: clamp(.68rem, 2.35vw, .9rem); line-height: .9; margin: 0; padding: .15rem .35rem; position: absolute; right: 4%; text-align: center; text-decoration: underline; text-transform: uppercase; transform: rotate(-2deg); width: 9.5rem; }
+.lastBitCopy { max-width: 36rem; text-align: center; }
+.lastBitCopy h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.3rem, 9vw, 4rem); font-weight: 900; letter-spacing: -.065em; line-height: .85; margin: 0 0 2rem; text-transform: uppercase; }
+.lastBitCopy > p { font-size: 1rem; line-height: 1.5; margin: 0 auto 1.5rem; max-width: 52ch; }
+.lastBitActions { display: flex; flex-wrap: wrap; gap: 1.75rem; justify-content: center; margin-top: 2.5rem; }
+.lastBitActions a { border-bottom: 1px solid var(--ink); color: var(--ink); font-size: .82rem; font-weight: 900; padding-bottom: .45rem; text-decoration: none; text-transform: uppercase; }
+.lastBitActions span { font-size: 1.1rem; margin-left: 1.5rem; }
+
+@media (min-width: 768px) {
+  .lastBit { gap: clamp(5rem, 11vw, 12rem); grid-template-columns: minmax(18rem, 25rem) minmax(29rem, 36rem); justify-content: center; padding: 2rem clamp(3rem, 10vw, 10rem) 5rem; }
+  .lastBitPortrait { align-self: end; min-height: 31rem; width: min(23vw, 22rem); }
+  .lastBitCopy { text-align: center; }
+  .lastBitCopy h2 { font-size: clamp(2.6rem, 3vw, 3.4rem); }
+  .lastBitActions { justify-content: center; }
+}

@@ -945,7 +945,7 @@
   color: var(--ink);
   isolation: isolate;
   overflow: hidden;
-  padding: 4.5rem 1.25rem 0;
+  padding: 3.5rem 1.25rem 0;
   position: relative;
 }
 
@@ -965,12 +965,13 @@
   z-index: -1;
 }
 
-.footerInner { display: grid; gap: 3rem; margin: 0 auto; max-width: 70rem; position: relative; }
+.footerInner { display: grid; gap: 2.5rem; justify-items: center; margin: 0 auto; max-width: 70rem; position: relative; width: 100%; }
 .footerLogo { color: var(--acid-yellow); display: grid; font-family: "Trebuchet MS", sans-serif; font-size: 2.1rem; font-weight: 900; justify-self: center; letter-spacing: -.12em; line-height: .7; text-decoration: none; text-transform: uppercase; text-shadow: 2px 2px #000, 4px 3px #000, 6px 4px #000; }
-.footerLinks { display: grid; gap: 2.25rem; grid-template-columns: 1fr 1fr; margin: 0 auto; max-width: 37rem; width: 100%; }
-.footerLinks section { display: grid; align-content: start; gap: 1rem; }
+.footerLinks { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); margin: 0 auto; max-width: 23rem; text-align: center; width: 100%; }
+.footerLinks section { display: grid; align-content: start; gap: .35rem; justify-items: center; }
+.footerLinks section + section { border-top: 1px solid rgb(13 13 13 / 20%); padding-top: 1.5rem; }
 .footerLinks h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(1.8rem, 6vw, 2.5rem); font-weight: 900; letter-spacing: -.07em; line-height: .9; margin: 0 0 .65rem; text-transform: uppercase; }
-.footerLinks a { color: inherit; font-size: .82rem; font-weight: 900; line-height: 1.2; min-height: 2.75rem; padding-block: .5rem; text-decoration: none; text-transform: uppercase; }
+.footerLinks a { align-items: center; color: inherit; display: flex; font-size: .82rem; font-weight: 900; justify-content: center; line-height: 1.2; min-height: 2.75rem; padding-block: .5rem; text-decoration: none; text-transform: uppercase; }
 .footerLinks a:hover, .footerLinks a:focus-visible { color: var(--orange); }
 .footerSocials { display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: center; }
 .footerSocials a { align-items: center; border: 3px solid var(--ink); border-radius: 50%; color: var(--ink); display: grid; font-family: Arial, sans-serif; font-size: 1.75rem; font-weight: 900; height: 3rem; line-height: 1; place-items: center; text-decoration: none; width: 3rem; }
@@ -981,15 +982,16 @@
 .footerLaser { height: auto; pointer-events: none; position: absolute; z-index: 1; }
 .footerLaserLeft { bottom: 1.8rem; left: -18%; transform: rotate(-18deg); width: min(51vw, 19rem); }
 .footerLaserRight { bottom: 1.2rem; right: -18%; transform: rotate(19deg); width: min(59vw, 23rem); }
-.footerBar { align-items: center; background: var(--acid-yellow); color: var(--orange); display: grid; font-size: .63rem; font-weight: 900; gap: .5rem; grid-template-columns: 1fr; margin: 4rem -1.25rem 0; min-height: 4rem; padding: .75rem 1.25rem; position: relative; text-align: center; text-transform: uppercase; z-index: 2; }
+.footerBar { align-items: center; background: var(--acid-yellow); color: var(--orange); display: grid; font-size: .63rem; font-weight: 900; gap: .75rem; grid-template-columns: 1fr; margin: 4rem -1.25rem 0; min-height: 4rem; padding: 1rem 1.25rem; position: relative; text-align: center; text-transform: uppercase; z-index: 2; }
 .footerBar a { color: inherit; text-decoration: none; }
 
 @media (min-width: 768px) {
   .siteFooter { min-height: 38rem; padding: 7rem clamp(3rem, 10vw, 10rem) 0; }
-  .footerInner { gap: 4rem; grid-template-columns: minmax(7rem, 15rem) 1fr; padding: 2rem 5rem 3rem; }
+  .footerInner { gap: 4rem; grid-template-columns: minmax(7rem, 15rem) 1fr; justify-items: initial; padding: 2rem 5rem 3rem; }
   .footerLogo { align-self: start; font-size: clamp(2rem, 3.5vw, 3.5rem); justify-self: start; }
-  .footerLinks { gap: clamp(3rem, 12vw, 10rem); grid-column: 2; margin: 0; max-width: 41rem; }
-  .footerLinks section { gap: 1.1rem; }
+  .footerLinks { gap: clamp(3rem, 12vw, 10rem); grid-column: 2; grid-template-columns: 1fr 1fr; margin: 0; max-width: 41rem; text-align: left; }
+  .footerLinks section { gap: 1.1rem; justify-items: initial; }
+  .footerLinks section + section { border-top: 0; padding-top: 0; }
   .footerLinks a { font-size: clamp(.75rem, 1.15vw, .95rem); }
   .footerSocials { grid-column: 2; justify-content: start; }
   .footerLaserLeft { bottom: 1rem; left: -5%; width: min(27vw, 21rem); }

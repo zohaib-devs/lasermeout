@@ -1,6 +1,6 @@
 .hero {
-  --hero-display-size: clamp(3.248rem, 15.6vw, 7.5rem);
-  --hero-model-size: clamp(14.4rem, 57.6vw, 18.4rem);
+  --hero-display-size: clamp(3.0856rem, 14.82vw, 7.125rem);
+  --hero-model-size: clamp(13.68rem, 54.72vw, 17.48rem);
   background-image: url("/images/hero-sky-background.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -71,7 +71,7 @@
   left: 5%;
   position: absolute;
   top: 9.6%;
-  width: clamp(6rem, 28vw, 10rem);
+  width: clamp(5.4rem, 25.2vw, 9rem);
   z-index: 4;
 }
 
@@ -132,7 +132,7 @@
 }
 
 .sopranoApplicator { justify-self: end; transform: translateX(1.14rem) rotate(10deg); }
-.sopranoHandpiece { justify-self: start; transform: translateX(-1.14rem) rotate(-10deg); }
+.sopranoHandpiece { justify-self: start; transform: translateX(-.5rem) rotate(-10deg); }
 
 .sopranoContent {
   align-items: center;
@@ -609,14 +609,14 @@
 }
 
 @media (min-width: 768px) {
-  .hero { --hero-model-size: clamp(16rem, calc(33.984vw - 2.832px), 30.4rem); min-height: 100svh; overflow: visible; }
+  .hero { --hero-model-size: clamp(15.2rem, calc(32.2848vw - 2.6904px), 28.88rem); min-height: 100svh; overflow: visible; }
   .heroTitle { top: 51.6%; }
   .heroModel { height: var(--hero-model-size); max-width: 38%; top: 53.2%; }
-  .heroLaser { left: 7%; top: 31.7%; width: clamp(9rem, 23vw, 24rem); }
+  .heroLaser { left: 7%; top: 31.7%; width: clamp(8.1rem, 20.7vw, 21.6rem); }
   .sopranoSection { gap: clamp(.8085rem, 1.32vw, 1.32rem); min-height: 0; padding-block: clamp(.0625rem, calc(2.5vw - .9375rem), 1.0625rem); padding-inline: clamp(1.75rem, 5.6vw, 7rem); }
   .sopranoApplicator, .sopranoHandpiece { max-height: 10.08rem; }
   .sopranoApplicator { transform: translateX(1.95rem) rotate(10deg); }
-  .sopranoHandpiece { transform: translateX(-1.95rem) rotate(-10deg); }
+  .sopranoHandpiece { transform: translateX(-.5rem) rotate(-10deg); }
   .sopranoContent { gap: clamp(.35rem, .9vw, .875rem); }
   .fuzzFreeZone { gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: minmax(12rem, 18rem) minmax(16rem, 22rem) minmax(15rem, 23.4rem); justify-content: start; min-height: 100svh; padding: 5rem clamp(3rem, 10vw, 10rem); }
   .fuzzFreeCopy { align-self: start; grid-column: 2; grid-row: 1; justify-self: start; margin-top: 1.25rem; }

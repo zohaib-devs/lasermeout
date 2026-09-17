@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import styles from "./horizontal-scroll-section.module.css";
 
-export default function HorizontalScrollSection({ children }) {
+export default function HorizontalScrollSection({ children, stackOnMobile = false }) {
   const containerRef = useRef(null);
   const trackRef = useRef(null);
 
@@ -14,9 +14,16 @@ export default function HorizontalScrollSection({ children }) {
     if (!container || !track) return undefined;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const desktopLayout = window.matchMedia("(min-width: 768px)");
     let frameId;
 
     function updatePosition() {
+      if (stackOnMobile && !desktopLayout.matches) {
+        container.style.height = "auto";
+        track.style.transform = "";
+        return;
+      }
+
       const distance = reducedMotion.matches ? 0 : Math.max(0, track.scrollWidth - window.innerWidth);
 
       container.style.height = distance ? `${Math.ceil(window.innerHeight + distance)}px` : "auto";
@@ -35,6 +42,7 @@ export default function HorizontalScrollSection({ children }) {
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
     reducedMotion.addEventListener("change", requestUpdate);
+    desktopLayout.addEventListener("change", requestUpdate);
     requestUpdate();
 
     return () => {
@@ -43,11 +51,12 @@ export default function HorizontalScrollSection({ children }) {
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
       reducedMotion.removeEventListener("change", requestUpdate);
+      desktopLayout.removeEventListener("change", requestUpdate);
     };
-  }, []);
+  }, [stackOnMobile]);
 
   return (
-    <div ref={containerRef} className={styles.container}>
+    <div ref={containerRef} className={`${styles.container} ${stackOnMobile ? styles.stackOnMobile : ""}`}>
       <div className={styles.viewport}>
         <div ref={trackRef} className={styles.track}>{children}</div>
       </div>

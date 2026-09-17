@@ -118,7 +118,7 @@ export default function Home() {
         </div>
       </section>
       <TreatmentFinder />
-      <HorizontalScrollSection>
+      <HorizontalScrollSection stackOnMobile>
       <section className={styles.fuzzFreeZone} aria-labelledby="fuzz-free-title">
         <div className={styles.fuzzFreeCopy}>
           <h2 id="fuzz-free-title">

@@ -530,21 +530,20 @@
   background: #ededed;
   color: var(--ink);
   display: grid;
-  gap: 1.5rem;
-  grid-auto-columns: minmax(16rem, 78vw);
-  grid-auto-flow: column;
+  gap: 3.5rem;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
   isolation: isolate;
-  overflow: visible;
+  overflow-x: clip;
   padding: 4.5rem 1.25rem 3rem;
   position: relative;
-  min-width: 100vw;
-  width: max-content;
+  width: 100%;
 }
 
 .fuzzFreeCopy,
 .strawberryFrame { position: relative; z-index: 1; }
 
-.fuzzFreeCopy { display: grid; justify-items: center; max-width: 34rem; }
+.fuzzFreeCopy { display: grid; justify-items: center; max-width: 34rem; width: 100%; }
 .fuzzFreeCopy h2 { color: var(--ink); display: grid; font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(3rem, 15vw, 7.5rem); font-weight: 900; letter-spacing: -.055em; line-height: .8; margin: 0; text-align: center; text-transform: uppercase; }
 .fuzzFreeText { font-size: 1rem; line-height: 1.45; margin: 1.5rem 0; max-width: 27ch; text-align: center; }
 .fuzzFreeCta { align-items: center; background: var(--ink); color: var(--paper); display: flex; font-size: .76rem; font-weight: 900; gap: 1.5rem; justify-content: space-between; min-height: 3rem; padding: .75rem 1rem; text-decoration: none; text-transform: uppercase; transition: transform .2s ease; }
@@ -563,7 +562,7 @@
 .shireenImage { aspect-ratio: 1; display: block; height: auto; object-fit: cover; width: 100%; }
 .shireenName { color: #ad6994; font-size: .88rem; font-weight: 900; letter-spacing: -.03em; margin: .65rem 0 0; text-align: center; text-transform: uppercase; }
 .shireenRole { color: var(--ink); font-size: .68rem; font-weight: 900; letter-spacing: .08em; margin: .2rem 0 0; text-align: center; text-transform: uppercase; }
-.whoWeHelp { color: var(--ink); display: grid; padding: 1.5rem; width: 100%; }
+.whoWeHelp { box-sizing: border-box; color: var(--ink); display: grid; max-width: 34rem; padding: 1.5rem; width: 100%; }
 .whoWeHelp h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.5rem, 12vw, 4.5rem); font-weight: 900; letter-spacing: -.07em; line-height: .8; margin: 0 0 1.5rem; text-transform: uppercase; }
 .whoWeHelp ul { display: grid; gap: 1rem; list-style: none; margin: 0; padding: 0; }
 .whoWeHelp li { border-top: 1px solid rgb(13 13 13 / 25%); display: grid; gap: .35rem; padding-top: .8rem; }
@@ -571,7 +570,7 @@
 .whoWeHelp li span { font-size: 1rem; line-height: 1.4; }
 .whoWeHelpStrawberry { align-self: center; justify-self: center; margin-top: -.5rem; width: min(80.6vw, 23.4rem); }
 .whoWeHelpStrawberryImage { display: block; height: auto; transform: rotate(5deg); width: 100%; }
-.newbieFriendly { align-self: center; color: var(--ink); display: grid; gap: 1.5rem; padding: 1.5rem; width: 100%; }
+.newbieFriendly { align-self: center; box-sizing: border-box; color: var(--ink); display: grid; gap: 1.5rem; max-width: 34rem; padding: 1.5rem; width: 100%; }
 .newbieFriendly h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.5rem, 12vw, 4.5rem); font-weight: 900; letter-spacing: -.07em; line-height: .8; margin: 0 0 1.25rem; text-transform: uppercase; }
 .newbieCopy > p { font-size: 1rem; line-height: 1.5; margin: 0; max-width: 34ch; }
 .newbieActions { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.75rem; }
@@ -622,7 +621,7 @@
   .sopranoApplicator { transform: translateX(1.95rem) rotate(10deg); }
   .sopranoHandpiece { transform: translateX(-.5rem) rotate(-10deg); }
   .sopranoContent { gap: clamp(.35rem, .9vw, .875rem); }
-  .fuzzFreeZone { gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: minmax(12rem, 18rem) minmax(16rem, 22rem) minmax(15rem, 23.4rem); justify-content: start; min-height: 100svh; padding: 5rem clamp(3rem, 10vw, 10rem); }
+  .fuzzFreeZone { gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: minmax(12rem, 18rem) minmax(16rem, 22rem) minmax(15rem, 23.4rem); justify-content: start; justify-items: initial; min-height: 100svh; min-width: 100vw; padding: 5rem clamp(3rem, 10vw, 10rem); width: max-content; }
   .fuzzFreeCopy { align-self: center; grid-column: 2; grid-row: 1; justify-self: start; margin-top: 0; }
   .fuzzFreeCopy h2 { font-size: clamp(2.1rem, 3.25vw, 3.5rem); }
   .strawberryFrame { align-self: center; grid-column: 1; grid-row: 1; justify-self: end; margin: 0; transform: translateY(-4.25rem); width: min(28.6vw, 23.4rem); }

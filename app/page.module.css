@@ -110,7 +110,9 @@
   justify-content: center;
   margin-top: 0;
   min-height: 0;
-  overflow: visible;
+  /* The three max-content columns can be wider than a narrow mobile viewport.
+     Keep their decorative overhang inside this band rather than expanding the page. */
+  overflow-x: clip;
   padding: clamp(.0625rem, calc(2.5vw - .9375rem), 1.0625rem) .7rem;
   position: relative;
   z-index: 2;

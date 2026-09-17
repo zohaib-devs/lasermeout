@@ -236,6 +236,9 @@
   filter: grayscale(0);
 }
 
+.londonImageWrap:focus-visible,
+.birminghamImageWrap:focus-visible { outline: 3px solid var(--acid-yellow); outline-offset: .25rem; }
+
 .locationLabel {
   background: #ff4b2b;
   border: 2px solid #111;
@@ -946,8 +949,19 @@
 .lastBitActions span { font-size: 1.1rem; margin-left: 1.5rem; }
 
 @media (min-width: 768px) {
-  .lastBit { gap: clamp(5rem, 11vw, 12rem); grid-template-columns: minmax(18rem, 25rem) minmax(29rem, 36rem); justify-content: center; padding: 2rem clamp(3rem, 10vw, 10rem) 5rem; }
-  .lastBitPortrait { align-self: end; min-height: 31rem; width: min(23vw, 22rem); }
+  .lastBit {
+    align-content: center;
+    gap: clamp(3rem, 8vw, 10rem);
+    grid-template-columns: minmax(16rem, 25rem) minmax(0, 36rem);
+    justify-content: center;
+    min-height: min(100svh, 58rem);
+    padding: 2rem clamp(3rem, 10vw, 10rem) 5rem;
+  }
+  .lastBitPortrait {
+    align-self: center;
+    min-height: clamp(24rem, 33vw, 31rem);
+    width: min(23vw, 22rem);
+  }
   .lastBitCopy { text-align: center; }
   .lastBitCopy h2 { font-size: clamp(2.6rem, 3vw, 3.4rem); }
   .lastBitActions { justify-content: center; }

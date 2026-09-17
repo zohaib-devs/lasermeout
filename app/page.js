@@ -5,6 +5,9 @@ import NoHorrorStories from "./components/no-horror-stories";
 import PackageCarousel from "./components/package-carousel";
 import HorizontalScrollSection from "./components/horizontal-scroll-section";
 import BeforeAfterSlider from "./components/before-after-slider";
+import ContactForm from "./components/contact-form";
+import LocationSection from "./components/location-section";
+import ProofPoints from "./components/proof-points";
 
 export default function Home() {
   return (
@@ -76,7 +79,13 @@ export default function Home() {
           <span className={styles.consultationAccent}>for consultation</span>
         </h2>
         <div className={styles.locationImages}>
-          <div className={styles.londonImageWrap}>
+          <a
+            className={styles.londonImageWrap}
+            href="https://www.phorest.com/salon/lasermeout"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Book a London consultation with Laser Me Out"
+          >
             <Image
               className={styles.locationImage}
               src="/images/london.png"
@@ -84,11 +93,17 @@ export default function Home() {
               fill
               sizes="(max-width: 767px) 64vw, 30vw"
             />
-          </div>
+          </a>
           <span className={`${styles.locationLabel} ${styles.londonLabel}`}>
             London
           </span>
-          <div className={styles.birminghamImageWrap}>
+          <a
+            className={styles.birminghamImageWrap}
+            href="https://www.phorest.com/salon/lasermeout1"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Book a Birmingham consultation with Laser Me Out"
+          >
             <Image
               className={styles.locationImage}
               src="/images/girmingham.png"
@@ -96,7 +111,7 @@ export default function Home() {
               fill
               sizes="(max-width: 767px) 48vw, 23vw"
             />
-          </div>
+          </a>
           <span className={`${styles.locationLabel} ${styles.birminghamLabel}`}>
             Birmingham
           </span>
@@ -216,7 +231,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className={styles.smoothSkin} aria-labelledby="smooth-skin-title">
+      <section id="results" className={styles.smoothSkin} aria-labelledby="smooth-skin-title">
         <p className={styles.smoothSkinEyebrow}>Bye hair</p>
         <h2 id="smooth-skin-title">
           <span>Who needs</span>
@@ -224,11 +239,6 @@ export default function Home() {
           <span>Smooth <strong>skin.</strong></span>
         </h2>
         <p className={styles.smoothSkinCopy}>What are your hair-free vibes? Wanna be more comfy raising your arms or willing to show off your legs? Do you have a touchable back or a slick-feeling chest? It&apos;s all possible. Peep our gag-worthy results.</p>
-        <nav className={styles.smoothSkinLinks} aria-label="Browse treatments by audience">
-          <a href="#treatments">For her <span aria-hidden="true">→</span></a>
-          <a href="#treatments">For him <span aria-hidden="true">→</span></a>
-          <a href="#treatments">For them <span aria-hidden="true">→</span></a>
-        </nav>
         <span className={styles.smoothSkinWatermark} aria-hidden="true">NO FILTERS</span>
       </section>
       <section className={styles.resultsComparison} aria-label="Laser hair removal before and after comparison">
@@ -445,7 +455,10 @@ export default function Home() {
       </section>
       <NoHorrorStories />
       <PackageCarousel />
-      <footer id="contact" className={styles.siteFooter}>
+      <ProofPoints />
+      <ContactForm />
+      <LocationSection />
+      <footer className={styles.siteFooter}>
         <span className={styles.footerWatermark} aria-hidden="true">LASER ME OUT</span>
         <Image
           className={`${styles.footerLaser} ${styles.footerLaserLeft}`}

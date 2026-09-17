@@ -9,7 +9,7 @@ const navigation = [
   "Results",
   "The LMO way",
   "About us",
-  "Journal",
+  "Visit us",
   "Contact",
 ];
 
@@ -36,7 +36,7 @@ export default function SideNav() {
 
   return (
     <>
-      <aside className={styles.rail} aria-label="Primary navigation">
+      <aside className={`${styles.rail} ${isOpen ? styles.railMenuOpen : ""}`} aria-label="Primary navigation">
         <a className={styles.logo} href="#top" aria-label="Laser Me Out home">
           <span className={styles.wordmark}>
             <span>Laser</span>

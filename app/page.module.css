@@ -704,46 +704,6 @@
   .newbieFriendly { align-items: center; }
 }
 
-/* When browser zoom creates an ultra-wide CSS viewport, show the long story as
-   a compact grid instead of exposing every horizontally-staggered scene at once. */
-@media (min-width: 2560px) {
-  .fuzzFreeZone {
-    align-items: center;
-    gap: 3rem 5rem;
-    grid-auto-flow: row;
-    grid-template-columns: repeat(3, minmax(18rem, 24rem));
-    grid-template-rows: repeat(3, auto);
-    justify-content: center;
-    min-height: auto;
-    min-width: 100vw;
-    padding: 5rem clamp(3rem, 8vw, 12rem);
-    width: 100vw;
-  }
-
-  .fuzzFreeCopy,
-  .strawberryFrame,
-  .shavingFrame,
-  .shireenFrame,
-  .whoWeHelp,
-  .whoWeHelpStrawberry,
-  .newbieFriendly {
-    align-self: center;
-    grid-column: auto;
-    grid-row: auto;
-    justify-self: center;
-    margin: 0;
-  }
-
-  .fuzzFreeCopy { text-align: center; }
-  .strawberryFrame { width: min(100%, 18rem); }
-  .shavingFrame { width: min(100%, 24rem); }
-  .shireenFrame { width: min(100%, 13rem); }
-  .whoWeHelp { padding: 0; width: min(100%, 24rem); }
-  .whoWeHelpStrawberry { width: min(100%, 18rem); }
-  .newbieFriendly { grid-template-columns: minmax(16rem, 22rem) minmax(16rem, 22rem); min-height: 0; width: min(100%, 46rem); }
-  .newbieRaja { transform: none; width: min(100%, 22rem); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .heroModel, .heroLaser, .blackContainerText, .hairRemovalMachine { animation: none; }
 }

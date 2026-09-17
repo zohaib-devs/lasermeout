@@ -6,7 +6,6 @@ const mapUrl = "https://www.google.com/maps/place/Laser+Me+Out/@51.5176063,-0.14
 export default function LocationSection() {
   return (
     <section id="visit-us" className={styles.section} aria-labelledby="find-us-title">
-      <span className={styles.watermark} aria-hidden="true">LMO / FIND US / LMO</span>
       <div className={styles.inner}>
         <p className={styles.eyebrow}>Visit us</p>
         <h2 id="find-us-title" className={styles.title}>Where to <span>find us</span></h2>

@@ -4,6 +4,9 @@ import SideNav from "./components/side-nav";
 export const metadata = {
   title: "Laser Me Out",
   description: "Laser hair removal for every body.",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({ children }) {

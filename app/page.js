@@ -239,7 +239,6 @@ export default function Home() {
           <span>Smooth <strong>skin.</strong></span>
         </h2>
         <p className={styles.smoothSkinCopy}>What are your hair-free vibes? Wanna be more comfy raising your arms or willing to show off your legs? Do you have a touchable back or a slick-feeling chest? It&apos;s all possible. Peep our gag-worthy results.</p>
-        <span className={styles.smoothSkinWatermark} aria-hidden="true">NO FILTERS</span>
       </section>
       <section className={styles.resultsComparison} aria-label="Laser hair removal before and after comparison">
         <BeforeAfterSlider />

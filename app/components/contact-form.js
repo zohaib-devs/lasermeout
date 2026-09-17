@@ -13,7 +13,6 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className={styles.section} aria-labelledby="contact-title">
-      <span className={styles.watermark} aria-hidden="true">LMO / HELLO / LMO</span>
       <div className={styles.inner}>
         <p className={styles.eyebrow}>Email &amp; phone</p>
         <h2 id="contact-title" className={styles.title}>Get in <span>touch</span></h2>

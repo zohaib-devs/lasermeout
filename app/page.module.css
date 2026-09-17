@@ -550,22 +550,24 @@
 .fuzzFreeCta span { font-size: 1.25rem; line-height: 1; }
 .strawberryFrame { justify-self: center; margin-top: -.5rem; width: min(80.6vw, 23.4rem); }
 .strawberry { display: block; height: auto; transform: rotate(5deg); width: 100%; }
-.shavingFrame { display: grid; justify-items: center; width: min(96.2vw, 29.9rem); }
-.shavingImage { display: block; height: auto; width: 100%; }
-.shireenFrame { background: #c7c7c7; border: 4px solid var(--ink); display: grid; isolation: isolate; justify-items: center; margin-top: 1rem; padding: .625rem; position: relative; transform: rotate(-10deg); width: min(67.6vw, 13rem); }
+.shavingFrame { --shaving-illustration-size: min(70vw, 18rem); display: grid; place-items: center; position: relative; width: min(96.2vw, 29.9rem); }
+.cactusImage,
+.razorImage { display: block; grid-column: 1; grid-row: 1; height: var(--shaving-illustration-size); object-fit: contain; width: var(--shaving-illustration-size); }
+.razorImage { height: calc(var(--shaving-illustration-size) / 2); transform: translate(-58.5%, -35%); width: calc(var(--shaving-illustration-size) / 2); z-index: 1; }
+.cactusImage { transform: translateX(34%) scale(1.3); z-index: 2; }
+.shireenFrame { background: #c7c7c7; border: 4px solid var(--ink); display: grid; isolation: isolate; justify-items: center; margin-top: 1rem; padding: .625rem; position: relative; transform: rotate(-10deg) scale(1.1); width: min(67.6vw, 13rem); }
 .shireenFrame::before { background: linear-gradient(to bottom, transparent, rgb(200 164 215 / 90%) 22%, rgb(200 164 215 / 75%) 78%, transparent); content: ""; filter: blur(1.4rem); inset-block: -4rem; left: 50%; pointer-events: none; position: absolute; transform: translateX(-50%); width: 65%; z-index: -1; }
 .shireenImageBox { width: 100%; }
 .shireenImage { aspect-ratio: 1; display: block; height: auto; object-fit: cover; width: 100%; }
 .shireenName { color: #ad6994; font-size: .88rem; font-weight: 900; letter-spacing: -.03em; margin: .65rem 0 0; text-align: center; text-transform: uppercase; }
 .shireenRole { color: var(--ink); font-size: .68rem; font-weight: 900; letter-spacing: .08em; margin: .2rem 0 0; text-align: center; text-transform: uppercase; }
 .whoWeHelp { color: var(--ink); display: grid; padding: 1.5rem; width: 100%; }
-.whoWeHelpEyebrow { color: #c8a4d7; font-size: .68rem; font-weight: 900; letter-spacing: .12em; margin: 0 0 .7rem; text-transform: uppercase; }
 .whoWeHelp h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.5rem, 12vw, 4.5rem); font-weight: 900; letter-spacing: -.07em; line-height: .8; margin: 0 0 1.5rem; text-transform: uppercase; }
 .whoWeHelp ul { display: grid; gap: 1rem; list-style: none; margin: 0; padding: 0; }
 .whoWeHelp li { border-top: 1px solid rgb(13 13 13 / 25%); display: grid; gap: .35rem; padding-top: .8rem; }
 .whoWeHelp li strong { color: #c8a4d7; font-size: .78rem; letter-spacing: .035em; text-transform: uppercase; }
-.whoWeHelp li span { font-size: .84rem; line-height: 1.4; }
-.whoWeHelpStrawberry { align-self: center; justify-self: center; width: min(64vw, 15rem); }
+.whoWeHelp li span { font-size: 1rem; line-height: 1.4; }
+.whoWeHelpStrawberry { align-self: center; justify-self: center; margin-top: -.5rem; width: min(80.6vw, 23.4rem); }
 .whoWeHelpStrawberryImage { display: block; height: auto; transform: rotate(5deg); width: 100%; }
 .newbieFriendly { align-self: center; color: var(--ink); display: grid; gap: 1.5rem; padding: 1.5rem; width: 100%; }
 .newbieFriendly h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.5rem, 12vw, 4.5rem); font-weight: 900; letter-spacing: -.07em; line-height: .8; margin: 0 0 1.25rem; text-transform: uppercase; }
@@ -574,10 +576,10 @@
 .newbieActions a { border-bottom: 1px solid var(--ink); color: var(--ink); font-size: .76rem; font-weight: 900; padding-bottom: .35rem; text-decoration: none; text-transform: uppercase; }
 .newbieActions a span { font-size: 1.1rem; margin-left: .75rem; }
 .newbieRaja { justify-self: center; min-height: 19rem; position: relative; width: min(70vw, 20rem); }
-.rajaBubble { align-items: center; background: var(--paper); border: 2px solid var(--ink); border-radius: 50%; color: var(--orange); display: flex; font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(1.5rem, 7vw, 2.8rem); font-weight: 900; height: 10rem; justify-content: center; line-height: .95; margin: 0; position: absolute; right: 20%; text-align: center; text-shadow: 1px 1px 0 var(--ink); text-transform: uppercase; top: 0; transform: rotate(-8deg); width: 15rem; }
+.rajaBubble { align-items: center; background: var(--paper); border: 2px solid var(--ink); border-radius: 50%; color: var(--orange); display: flex; font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(1.5rem, 7vw, 2.8rem); font-weight: 900; height: 10rem; justify-content: center; line-height: .95; margin: 0; position: absolute; right: 20%; text-align: center; text-shadow: 1px 1px 0 var(--ink); text-transform: uppercase; top: 0; transform: none; width: 15rem; }
 .rajaBubble::after { background: var(--paper); border-bottom: 2px solid var(--ink); border-right: 2px solid var(--ink); bottom: -.65rem; content: ""; height: 1.5rem; position: absolute; right: 1.75rem; transform: rotate(22deg) skewY(-22deg); width: 1.5rem; }
-.rajaImage { bottom: 0; display: block; height: auto; position: absolute; right: 0; width: min(72%, 15rem); z-index: 1; }
-.rajaBadge { background: var(--orange); bottom: .7rem; color: var(--paper); display: grid; left: 0; margin: 0; padding: .65rem 1rem; position: absolute; text-align: center; text-transform: uppercase; transform: rotate(5deg); width: 78%; z-index: 2; }
+.rajaImage { bottom: 0; display: block; height: auto; position: absolute; right: 0; transform: scale(1.1); width: min(72%, 15rem); z-index: 1; }
+.rajaBadge { background: var(--orange); bottom: .7rem; color: var(--paper); display: grid; left: 0; margin: 0; padding: .65rem 1rem; position: absolute; text-align: center; text-transform: uppercase; transform: translate(5%, 20%); width: 78%; z-index: 2; }
 .rajaBadge strong { color: var(--acid-yellow); font-size: 1.35rem; letter-spacing: -.06em; line-height: .85; }
 .rajaBadge span { font-size: .58rem; font-weight: 900; letter-spacing: .04em; margin-top: .2rem; }
 
@@ -594,7 +596,7 @@
 .lmoDifferenceCopy { display: grid; justify-items: center; max-width: 30rem; }
 .lmoDifferenceCopy p { font-size: .75rem; font-weight: 900; letter-spacing: .12em; margin: 0 0 .75rem; text-align: center; text-transform: uppercase; }
 .lmoDifferenceCopy h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.75rem, 14vw, 6rem); font-weight: 900; letter-spacing: -.065em; line-height: .8; margin: 0; text-align: center; text-transform: uppercase; }
-.lmoDifferenceCopy .lmoDifferenceText { font-size: .9rem; font-weight: 400; letter-spacing: 0; line-height: 1.5; margin: 1.25rem 0 0; max-width: 34ch; text-transform: none; }
+.lmoDifferenceCopy .lmoDifferenceText { font-size: 1rem; font-weight: 400; letter-spacing: 0; line-height: 1.5; margin: 1.25rem 0 0; max-width: 34ch; text-transform: none; }
 
 @keyframes outlineBlink {
   0%, 22.78%, 45.57% {
@@ -619,26 +621,29 @@
   .sopranoHandpiece { transform: translateX(-.5rem) rotate(-10deg); }
   .sopranoContent { gap: clamp(.35rem, .9vw, .875rem); }
   .fuzzFreeZone { gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: minmax(12rem, 18rem) minmax(16rem, 22rem) minmax(15rem, 23.4rem); justify-content: start; min-height: 100svh; padding: 5rem clamp(3rem, 10vw, 10rem); }
-  .fuzzFreeCopy { align-self: start; grid-column: 2; grid-row: 1; justify-self: start; margin-top: 1.25rem; }
+  .fuzzFreeCopy { align-self: center; grid-column: 2; grid-row: 1; justify-self: start; margin-top: 0; }
   .fuzzFreeCopy h2 { font-size: clamp(2.1rem, 3.25vw, 3.5rem); }
-  .strawberryFrame { align-self: center; grid-column: 1; grid-row: 1; justify-self: end; margin: 0; width: min(28.6vw, 23.4rem); }
+  .strawberryFrame { align-self: center; grid-column: 1; grid-row: 1; justify-self: end; margin: 0; transform: translateY(-4.25rem); width: min(28.6vw, 23.4rem); }
   .shavingFrame { align-self: center; grid-column: 3; grid-row: 1; justify-self: start; width: min(37.18vw, 30.42rem); }
-  .lmoDifferenceCopy { justify-items: center; }
+  .razorImage { transform: translate(-58.5%, calc(-35% - 4.25rem)); }
+  .cactusImage { transform: translate(34%, -4.25rem) scale(1.3); }
+  .lmoDifferenceCopy { align-self: center; grid-column: 4; grid-row: 1; justify-items: center; }
   .lmoDifferenceCopy h2 { font-size: clamp(2rem, 3vw, 3rem); }
 }
 
 @media (min-width: 1280px) {
-  .fuzzFreeZone { grid-template-columns: 23.4rem 18rem 44rem 29rem 32rem 24rem 55rem; padding-inline: clamp(3rem, 6vw, 7rem); }
+  .fuzzFreeZone { grid-template-columns: 23.4rem 18rem 30.42rem 13rem 29rem 32rem 24rem 55rem; padding-inline: clamp(3rem, 6vw, 7rem); }
   .strawberryFrame { align-self: center; margin-top: 0; width: min(22.88vw, 18.72rem); }
-  .shavingFrame { align-items: center; align-self: center; grid-template-columns: minmax(0, 30.42rem) minmax(10rem, 13rem); justify-items: initial; margin-top: 0; width: auto; }
-  .shavingImage { grid-column: 1; grid-row: 1; }
-  .lmoDifferenceCopy { align-self: start; grid-column: 2; grid-row: 1; justify-items: center; margin-top: 1.25rem; }
+  .shavingFrame { align-items: center; align-self: center; justify-items: center; margin-top: 0; width: auto; }
+  .razorImage { transform: translate(-58.5%, -35%); }
+  .cactusImage { transform: translateX(34%) scale(1.3); }
+  .lmoDifferenceCopy { align-self: center; grid-column: 4; grid-row: 1; justify-items: center; margin-top: 0; }
   .lmoDifferenceCopy p, .lmoDifferenceCopy h2 { text-align: center; }
-  .shireenFrame { align-self: center; grid-column: 4; grid-row: 1; justify-self: start; margin: 0 clamp(2rem, 4vw, 4rem) 0 clamp(3rem, 6vw, 6rem); width: min(100%, 15.6rem); }
-  .whoWeHelp { align-self: start; grid-column: 5; grid-row: 1; margin-top: 1.25rem; padding: 0; width: min(100%, 28rem); }
-  .whoWeHelpStrawberry { align-self: center; grid-column: 6; grid-row: 1; justify-self: start; margin: 0 0 0 clamp(2rem, 4vw, 4rem); width: min(100%, 18rem); }
-  .newbieFriendly { align-items: start; align-self: start; grid-column: 7; grid-row: 1; grid-template-columns: minmax(18rem, 23rem) minmax(22rem, 28rem); justify-content: start; margin-left: clamp(2rem, 4vw, 4rem); margin-top: 1.25rem; min-height: 32rem; padding: 0; width: min(100%, 55rem); }
-  .newbieRaja { align-self: center; justify-self: end; transform: translateY(-30%); width: min(100%, 28rem); }
+  .shireenFrame { align-self: center; grid-column: 5; grid-row: 1; justify-self: center; margin: 0; width: min(100%, 15.6rem); }
+  .whoWeHelp { align-self: start; grid-column: 6; grid-row: 1; margin-top: 1.25rem; padding: 0; width: min(100%, 28rem); }
+  .whoWeHelpStrawberry { align-self: center; grid-column: 7; grid-row: 1; justify-self: center; margin: 0; transform: translateY(-4.25rem); width: min(100%, 18rem); }
+  .newbieFriendly { align-items: start; align-self: start; grid-column: 8; grid-row: 1; grid-template-columns: minmax(18rem, 23rem) minmax(22rem, 28rem); justify-content: start; margin-left: 0; margin-top: 1.25rem; min-height: 32rem; padding: 0; width: min(100%, 55rem); }
+  .newbieRaja { align-self: center; justify-self: end; transform: none; width: min(100%, 28rem); }
   .rajaBubble { font-size: clamp(1.5rem, 3vw, 2.4rem); height: 11rem; left: 0; right: auto; top: 0; width: 18rem; }
   .rajaImage { right: 0; width: min(62%, 15rem); }
   .rajaBadge { bottom: .85rem; left: 20%; width: 70%; }
@@ -652,6 +657,7 @@
     display: grid;
     height: var(--fuzz-visual-size);
     place-items: center;
+    transform: translateY(-4.25rem);
     width: var(--fuzz-visual-size);
   }
 
@@ -683,10 +689,16 @@
     min-height: var(--fuzz-content-height);
   }
 
-  .shavingImage {
+  .cactusImage {
     height: var(--fuzz-visual-size);
     object-fit: contain;
     width: var(--fuzz-visual-size);
+  }
+
+  .razorImage {
+    height: calc(var(--fuzz-visual-size) / 2);
+    object-fit: contain;
+    width: calc(var(--fuzz-visual-size) / 2);
   }
 
   .newbieFriendly { align-items: center; }
@@ -727,7 +739,7 @@
   .shavingFrame { width: min(100%, 24rem); }
   .shireenFrame { width: min(100%, 13rem); }
   .whoWeHelp { padding: 0; width: min(100%, 24rem); }
-  .whoWeHelpStrawberry { width: min(100%, 16rem); }
+  .whoWeHelpStrawberry { width: min(100%, 18rem); }
   .newbieFriendly { grid-template-columns: minmax(16rem, 22rem) minmax(16rem, 22rem); min-height: 0; width: min(100%, 46rem); }
   .newbieRaja { transform: none; width: min(100%, 22rem); }
 }

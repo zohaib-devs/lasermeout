@@ -139,18 +139,26 @@ export default function Home() {
           />
         </div>
         <div className={styles.shavingFrame}>
-          <div className={styles.lmoDifferenceCopy}>
-            <h2 id="lmo-difference-title">The LMO difference</h2>
-            <p className={styles.lmoDifferenceText}>We’re not a laser chop shop package deal you got for 50% off online or a cheap DIY home kit you impulse bought on the ‘gram. Our clinic is located in London’s medical district and uses top-of-the-range equipment with expert prep practices to give you the trans-formative skinsperience you’re looking for. It’s time to invest adult money into your skin so you can get real results.</p>
-          </div>
           <Image
-            className={styles.shavingImage}
-            src="/images/fuzz-free-shaving.png"
-            alt="Illustrated razor and prickly cactus"
-            width={1280}
-            height={1280}
-            sizes="(max-width: 767px) 70vw, 28vw"
+            className={styles.razorImage}
+            src="/images/fuzz-free-razor.png"
+            alt="Illustrated razor"
+            width={1254}
+            height={1254}
+            sizes="(max-width: 767px) 70vw, 18rem"
           />
+          <Image
+            className={styles.cactusImage}
+            src="/images/fuzz-free-cactus.png"
+            alt="Illustrated prickly cactus"
+            width={1254}
+            height={1254}
+            sizes="(max-width: 767px) 70vw, 18rem"
+          />
+        </div>
+        <div className={styles.lmoDifferenceCopy}>
+          <h2 id="lmo-difference-title">The LMO difference</h2>
+          <p className={styles.lmoDifferenceText}>We’re not a laser chop shop package deal you got for 50% off online or a cheap DIY home kit you impulse bought on the ‘gram. Our clinic is located in London’s medical district and uses top-of-the-range equipment with expert prep practices to give you the trans-formative skinsperience you’re looking for. It’s time to invest adult money into your skin so you can get real results.</p>
         </div>
         <div className={styles.shireenFrame}>
           <div className={styles.shireenImageBox}>
@@ -167,7 +175,6 @@ export default function Home() {
           <p className={styles.shireenRole}>Founder, Laser Me Out</p>
         </div>
         <section className={styles.whoWeHelp} aria-labelledby="who-we-help-title">
-          <p className={styles.whoWeHelpEyebrow}>Laser for every body</p>
           <h2 id="who-we-help-title">Who we help</h2>
           <ul>
             <li><strong>All skin types</strong><span>Our laser hair treatments work on any pigmented hair.</span></li>

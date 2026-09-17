@@ -549,7 +549,7 @@
 .fuzzFreeCta { align-items: center; background: var(--ink); color: var(--paper); display: flex; font-size: .76rem; font-weight: 900; gap: 1.5rem; justify-content: space-between; min-height: 3rem; padding: .75rem 1rem; text-decoration: none; text-transform: uppercase; transition: transform .2s ease; }
 .fuzzFreeCta:hover { transform: translateY(-.18rem); }
 .fuzzFreeCta span { font-size: 1.25rem; line-height: 1; }
-.strawberryFrame { justify-self: center; margin-top: -.5rem; width: min(80.6vw, 23.4rem); }
+.strawberryFrame { justify-self: center; margin-top: -.5rem; order: -1; width: min(80.6vw, 23.4rem); }
 .strawberry { display: block; height: auto; transform: rotate(5deg); width: 100%; }
 .shavingFrame { --shaving-illustration-size: min(70vw, 18rem); display: grid; place-items: center; position: relative; width: min(96.2vw, 29.9rem); }
 .cactusImage,
@@ -624,7 +624,7 @@
   .fuzzFreeZone { gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: minmax(12rem, 18rem) minmax(16rem, 22rem) minmax(15rem, 23.4rem); justify-content: start; justify-items: initial; min-height: 100svh; min-width: 100vw; padding: 5rem clamp(3rem, 10vw, 10rem); width: max-content; }
   .fuzzFreeCopy { align-self: center; grid-column: 2; grid-row: 1; justify-self: start; margin-top: 0; }
   .fuzzFreeCopy h2 { font-size: clamp(2.1rem, 3.25vw, 3.5rem); }
-  .strawberryFrame { align-self: center; grid-column: 1; grid-row: 1; justify-self: end; margin: 0; transform: translateY(-4.25rem); width: min(28.6vw, 23.4rem); }
+  .strawberryFrame { align-self: center; grid-column: 1; grid-row: 1; justify-self: end; margin: 0; order: initial; transform: translateY(-4.25rem); width: min(28.6vw, 23.4rem); }
   .shavingFrame { align-self: center; grid-column: 3; grid-row: 1; justify-self: start; width: min(37.18vw, 30.42rem); }
   .razorImage { transform: translate(-58.5%, calc(-35% - 4.25rem)); }
   .cactusImage { transform: translate(34%, -4.25rem) scale(1.3); }

@@ -77,7 +77,7 @@ export default function TreatmentFinder() {
         alt="Illustrated winged laser machine"
         width={1299}
         height={1200}
-        sizes="(max-width: 767px) 32vw, 18rem"
+        sizes="(max-width: 767px) 25.6vw, 14.4rem"
       />
       <header className={styles.intro}>
         <h2 id="hair-removal-title">Hair removal for every body</h2>

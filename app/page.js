@@ -13,12 +13,27 @@ export default function Home() {
   return (
     <>
       <main id="top" className={styles.hero}>
-        <h1 className={styles.heroTitle}>
-          <span>Skip the</span>
-          <span>Shave</span>
-          <span>Go hair-free</span>
-          <span>Forever</span>
-        </h1>
+        <div className={styles.textAndFlyingModel}>
+          <div className={styles.heroTextLayer}>
+            <h1 className={styles.heroTitle}>
+              <span>Skip the</span>
+              <span>Shave</span>
+              <span>Go hair-free</span>
+              <span>Forever</span>
+            </h1>
+          </div>
+          <div className={styles.heroModelLayer}>
+            <Image
+              className={styles.heroModel}
+              src="/images/hero-jumping-woman.png"
+              alt="Woman jumping joyfully"
+              width={1024}
+              height={1536}
+              priority
+              sizes="(max-width: 767px) 72vw, 38vw"
+            />
+          </div>
+        </div>
         <Image
           className={styles.heroLaser}
           src="/images/hero-flying-laser.png"
@@ -27,15 +42,6 @@ export default function Home() {
           height={1200}
           priority
           sizes="(max-width: 767px) 34vw, 23vw"
-        />
-        <Image
-          className={styles.heroModel}
-          src="/images/hero-jumping-woman.png"
-          alt="Woman jumping joyfully"
-          width={1024}
-          height={1536}
-          priority
-          sizes="(max-width: 767px) 72vw, 38vw"
         />
         <span className={styles.heroLocations}>London + Birmingham</span>
       </main>
@@ -197,10 +203,6 @@ export default function Home() {
           <div className={styles.newbieCopy}>
             <h2 id="newbie-friendly-title">Newbie friendly</h2>
             <p>We think it’s super important for newbies to come to a high-quality clinic like ours. Why? For the prep work. Poor prep leads to bad results and we want your first experience to be excellent. So, we always recommend you get the shaving add-on with your service too. Then you can just rock up and we’ll do the rest! Simple!</p>
-            <div className={styles.newbieActions}>
-              <a href="#consultation">Make a booking <span aria-hidden="true">→</span></a>
-              <a href="#consultation">Talk to us first <span aria-hidden="true">→</span></a>
-            </div>
           </div>
           <div className={styles.newbieRaja}>
             <p className={styles.rajaBubble}>Speak to an<br />expert</p>

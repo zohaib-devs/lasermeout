@@ -1,6 +1,6 @@
 .hero {
   --hero-display-size: clamp(3.0856rem, 14.82vw, 7.125rem);
-  --hero-model-size: clamp(13.68rem, 54.72vw, 17.48rem);
+  --hero-model-size: clamp(12rem, 54.72vw, 17.48rem);
   background-image: url("/images/hero-sky-background.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -9,10 +9,17 @@
   isolation: isolate;
   overflow: hidden;
   place-items: center;
-  min-height: 60svh;
+  min-height: 52svh;
   position: relative;
   width: 100%;
   z-index: 1;
+}
+
+.textAndFlyingModel {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(-20%);
 }
 
 .hero::after {
@@ -26,6 +33,14 @@
   z-index: 0;
 }
 
+.heroTextLayer {
+  left: 50%;
+  position: absolute;
+  top: 65.6%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
 .heroTitle {
   align-items: center;
   color: var(--orange);
@@ -36,15 +51,10 @@
   font-weight: 900;
   letter-spacing: -.1em;
   line-height: .82;
-  left: 50%;
   margin: 0;
-  position: absolute;
   text-align: center;
   text-transform: uppercase;
-  top: 65.6%;
-  transform: translate(-50%, -50%);
   white-space: nowrap;
-  z-index: 1;
 }
 
 .heroTitle span:first-child,
@@ -53,16 +63,23 @@
   letter-spacing: -.075em;
 }
 
-.heroModel {
+.heroModelLayer {
   animation: modelFloat 4.4s linear infinite;
   height: var(--hero-model-size);
   left: 50%;
   max-width: 72%;
   position: absolute;
-  top: 25.6%;
+  top: 65.6%;
   transform: translate(-50%, -50%);
   width: auto;
   z-index: 2;
+}
+
+.heroModel {
+  display: block;
+  height: 100%;
+  max-width: 100%;
+  width: auto;
 }
 
 .heroLaser {
@@ -104,16 +121,16 @@
   align-items: center;
   background: #ad6994;
   display: grid;
-  gap: .8085rem;
-  grid-template-columns: max-content max-content max-content;
+  gap: .35rem;
+  grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem;
   height: auto;
-  justify-content: center;
-  margin-top: 0;
+  justify-content: stretch;
+  margin-top: clamp(-4rem, -12vw, -2.5rem);
   min-height: 0;
   /* The three max-content columns can be wider than a narrow mobile viewport.
      Keep their decorative overhang inside this band rather than expanding the page. */
   overflow-x: clip;
-  padding: clamp(.0625rem, calc(2.5vw - .9375rem), 1.0625rem) .7rem;
+  padding: clamp(.0625rem, calc(2.5vw - .9375rem), 1.0625rem) .375rem;
   position: relative;
   z-index: 2;
 }
@@ -128,20 +145,22 @@
 .sopranoHandpiece {
   height: auto;
   justify-self: center;
-  max-height: 7.28rem;
+  max-height: 5.5rem;
+  max-width: 2.25rem;
   object-fit: contain;
-  width: auto;
+  width: 100%;
 }
 
-.sopranoApplicator { justify-self: end; transform: translateX(1.14rem) rotate(10deg); }
-.sopranoHandpiece { justify-self: start; transform: translateX(-.5rem) rotate(-10deg); }
+.sopranoApplicator { justify-self: end; margin-right: clamp(.25rem, 1.25vw, .75rem); transform: translateX(-.25rem) rotate(10deg); }
+.sopranoHandpiece { justify-self: start; transform: translateX(.25rem) rotate(-10deg); }
 
 .sopranoContent {
   align-items: center;
   display: grid;
-  gap: .35rem;
-  grid-template-columns: max-content 1px max-content;
-  justify-content: center;
+  gap: .25rem;
+  grid-template-columns: max-content 1px minmax(0, 1fr);
+  justify-content: stretch;
+  min-width: 0;
   text-transform: uppercase;
 }
 
@@ -149,7 +168,7 @@
   color: var(--ink);
   display: flex;
   flex-direction: column;
-  font-size: clamp(.945rem, 3.85vw, 1.75rem);
+  font-size: clamp(.75rem, 3.2vw, 1.75rem);
   font-weight: 700;
   letter-spacing: -.075em;
   line-height: .8;
@@ -160,11 +179,12 @@
 
 .sopranoCopy {
   color: var(--ink);
-  font-size: clamp(.945rem, 3.85vw, 1.75rem);
+  font-size: clamp(.75rem, 3.2vw, 1.75rem);
   font-weight: 900;
   letter-spacing: .015em;
   line-height: 1.1;
   margin: 0;
+  min-width: 0;
 }
 
 .whiteSection {
@@ -275,9 +295,9 @@
   border-radius: 999px;
   box-sizing: border-box;
   display: flex;
-  height: 60px;
+  height: 48px;
   justify-content: center;
-  margin: -40px auto;
+  margin: -24px auto;
   max-width: calc(100% - 2rem);
   padding-inline: clamp(1.25rem, 4vw, 2.5rem);
   position: relative;
@@ -573,9 +593,6 @@
 .newbieFriendly { align-self: center; box-sizing: border-box; color: var(--ink); display: grid; gap: 1.5rem; max-width: 34rem; padding: 1.5rem; width: 100%; }
 .newbieFriendly h2 { font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(2.5rem, 12vw, 4.5rem); font-weight: 900; letter-spacing: -.07em; line-height: .8; margin: 0 0 1.25rem; text-transform: uppercase; }
 .newbieCopy > p { font-size: 1rem; line-height: 1.5; margin: 0; max-width: 34ch; }
-.newbieActions { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.75rem; }
-.newbieActions a { border-bottom: 1px solid var(--ink); color: var(--ink); font-size: .76rem; font-weight: 900; padding-bottom: .35rem; text-decoration: none; text-transform: uppercase; }
-.newbieActions a span { font-size: 1.1rem; margin-left: .75rem; }
 .newbieRaja { justify-self: center; min-height: 19rem; position: relative; width: min(70vw, 20rem); }
 .rajaBubble { align-items: center; background: var(--paper); border: 2px solid var(--ink); border-radius: 50%; color: var(--orange); display: flex; font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(1.5rem, 7vw, 2.8rem); font-weight: 900; height: 10rem; justify-content: center; line-height: .95; margin: 0; position: absolute; right: 20%; text-align: center; text-shadow: 1px 1px 0 var(--ink); text-transform: uppercase; top: 0; transform: none; width: 15rem; }
 .rajaBubble::after { background: var(--paper); border-bottom: 2px solid var(--ink); border-right: 2px solid var(--ink); bottom: -.65rem; content: ""; height: 1.5rem; position: absolute; right: 1.75rem; transform: rotate(22deg) skewY(-22deg); width: 1.5rem; }
@@ -613,14 +630,17 @@
 
 @media (min-width: 768px) {
   .hero { --hero-model-size: clamp(15.2rem, calc(32.2848vw - 2.6904px), 28.88rem); min-height: 100svh; overflow: visible; }
-  .heroTitle { top: 51.6%; }
-  .heroModel { height: var(--hero-model-size); max-width: 38%; top: 53.2%; }
+  .blackContainer { height: 60px; margin: -30px auto; }
+  .textAndFlyingModel { transform: none; }
+  .heroTextLayer { left: 50%; position: absolute; top: 51.6%; transform: translate(-50%, -50%); }
+  .heroModelLayer { animation-name: modelFloat; height: var(--hero-model-size); left: 50%; max-width: 38%; position: absolute; top: 53.2%; transform: translate(-50%, -50%); width: auto; }
   .heroLaser { left: 7%; top: 31.7%; width: clamp(8.1rem, 20.7vw, 21.6rem); }
-  .sopranoSection { gap: clamp(.8085rem, 1.32vw, 1.32rem); min-height: 0; padding-block: clamp(.0625rem, calc(2.5vw - .9375rem), 1.0625rem); padding-inline: clamp(1.75rem, 5.6vw, 7rem); }
-  .sopranoApplicator, .sopranoHandpiece { max-height: 10.08rem; }
+  .sopranoSection { gap: clamp(.8085rem, 1.32vw, 1.32rem); grid-template-columns: max-content max-content max-content; justify-content: center; margin-top: 0; min-height: 0; padding-block: clamp(.0625rem, calc(2.5vw - .9375rem), 1.0625rem); padding-inline: clamp(1.75rem, 5.6vw, 7rem); }
+  .sopranoApplicator, .sopranoHandpiece { max-height: 10.08rem; max-width: none; width: auto; }
   .sopranoApplicator { transform: translateX(1.95rem) rotate(10deg); }
   .sopranoHandpiece { transform: translateX(-.5rem) rotate(-10deg); }
-  .sopranoContent { gap: clamp(.35rem, .9vw, .875rem); }
+  .sopranoContent { gap: clamp(.35rem, .9vw, .875rem); grid-template-columns: max-content 1px max-content; justify-content: center; min-width: initial; }
+  .sopranoTitle, .sopranoCopy { font-size: clamp(.945rem, 3.85vw, 1.75rem); }
   .fuzzFreeZone { gap: clamp(1.25rem, 2vw, 2rem); grid-template-columns: minmax(12rem, 18rem) minmax(16rem, 22rem) minmax(15rem, 23.4rem); justify-content: start; justify-items: initial; min-height: 100svh; min-width: 100vw; padding: 5rem clamp(3rem, 10vw, 10rem); width: max-content; }
   .fuzzFreeCopy { align-self: center; grid-column: 2; grid-row: 1; justify-self: start; margin-top: 0; }
   .fuzzFreeCopy h2 { font-size: clamp(2.1rem, 3.25vw, 3.5rem); }
@@ -706,7 +726,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .heroModel, .heroLaser, .blackContainerText, .hairRemovalMachine { animation: none; }
+  .heroModelLayer, .heroLaser, .blackContainerText, .hairRemovalMachine { animation: none; }
 }
 
 @media (min-width: 768px) {

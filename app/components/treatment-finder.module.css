@@ -18,7 +18,7 @@
   right: clamp(.5rem, 5vw, 5rem);
   top: clamp(-8rem, -10vw, -5rem);
   transform: rotate(-14deg);
-  width: clamp(11.5rem, 31.68vw, 25.92rem);
+  width: clamp(9.2rem, 25.344vw, 20.736rem);
   z-index: 1;
 }
 
@@ -38,7 +38,7 @@
 .featuredArea:hover, .featuredAreaActive:hover { transform: translateY(-2px); }
 .featuredArrows button { align-items: center; background: transparent; border: 2px solid var(--ink); border-radius: 50%; color: var(--ink); cursor: pointer; display: flex; font-size: 1.25rem; justify-content: center; min-height: 2.75rem; min-width: 2.75rem; padding: 0; transition: background .2s ease, color .2s ease; }
 .featuredArrows button:hover { background: var(--ink); color: var(--paper); }
-.bodyArt { aspect-ratio: 1; background-repeat: no-repeat; background-size: 300% 300%; justify-self: center; margin: .75rem auto 0; max-width: 10rem; width: min(45vw, 10rem); }
+.bodyArt { aspect-ratio: 1; background-repeat: no-repeat; background-size: 300% 300%; justify-self: center; margin: .75rem auto 0; max-width: 10rem; transform: translateX(-1.6875rem); width: min(45vw, 10rem); }
 .womenArt { background-image: url("/images/body-parts-women.png"); }
 .menArt { background-image: url("/images/body-parts-men.png"); }
 .womenArt.face { background-image: url("/images/woman-face.png"); background-position: center; background-size: contain; }

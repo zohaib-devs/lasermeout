@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("mobile hero keeps the model inside the visible hero", async ({ page }) => {
+test("mobile hero keeps the model inside the visible hero and over the heading", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto("http://127.0.0.1:3000", { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(1000);
@@ -20,9 +20,9 @@ test("mobile hero keeps the model inside the visible hero", async ({ page }) => 
   console.log(JSON.stringify({ heroBox, modelBox, titleBox }));
 
   expect(modelBox.y).toBeGreaterThanOrEqual(heroBox.y);
-  expect(modelBox.y + modelBox.height).toBeLessThanOrEqual(titleBox.y - 16);
-  expect(titleBox.y - (modelBox.y + modelBox.height)).toBeLessThanOrEqual(48);
-  expect(heroBox.y + heroBox.height - (titleBox.y + titleBox.height)).toBeLessThanOrEqual(40);
+  expect(modelBox.y + modelBox.height).toBeLessThanOrEqual(heroBox.y + heroBox.height);
+  expect(modelBox.y).toBeLessThan(titleBox.y + titleBox.height);
+  expect(modelBox.y + modelBox.height).toBeGreaterThan(titleBox.y);
 });
 
 test("desktop hero keeps the model below the viewport top", async ({ page }) => {

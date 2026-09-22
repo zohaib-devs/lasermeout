@@ -202,7 +202,7 @@ export default function Home() {
         <section className={styles.newbieFriendly} aria-labelledby="newbie-friendly-title">
           <div className={styles.newbieCopy}>
             <h2 id="newbie-friendly-title">Newbie friendly</h2>
-            <p>We think it’s super important for newbies to come to a high-quality clinic like ours. Why? For the prep work. Poor prep leads to bad results and we want your first experience to be excellent. So, we always recommend you get the shaving add-on with your service too. Then you can just rock up and we’ll do the rest! Simple!</p>
+            <p>We think it’s super important for newbies to come to a high-quality clinic like ours. Why? For the prep work. Poor prep leads to bad results and we want your first experience to be excellent. So, we always recommend you get the shaving add-on with your service too. Then you can just rock up and we’ll do the rest! Simple! We’ll talk you through every step before your first treatment. You’ll always know what to expect and how to care for your skin afterwards. We’ve got you.</p>
           </div>
           <div className={styles.newbieRaja}>
             <p className={styles.rajaBubble}>Speak to an<br />expert</p>

@@ -81,7 +81,11 @@ export default function TreatmentFinder() {
       />
       <header className={styles.intro}>
         <h2 id="hair-removal-title">Hair removal for every body</h2>
-        <p className={styles.tagline}>Stop shaving <span className={styles.forever}>forever</span>. Wave waxing goodbye.</p>
+        <p className={styles.tagline}>
+          <span className={styles.taglineLine}>Stop shaving </span>
+          <span className={styles.taglineLine}><span className={styles.forever}>forever</span>. Wave </span>
+          <span className={styles.taglineLine}>waxing goodbye.</span>
+        </p>
         <p className={styles.introCopy}>Get serious about your look and experience the Baker Street difference. Our laser hair removal and skin treatment plans will transform your complexion and your confidence.</p>
       </header>
 
@@ -100,7 +104,7 @@ export default function TreatmentFinder() {
             </button>
           ))}
         </div>
-        <p className={styles.mustHave}>
+        <p className={styles.mustHave} aria-live="polite" aria-atomic="true">
           <span>Must-have</span>
           <span>Silky smooth</span>
           <strong>{featuredArea}</strong>

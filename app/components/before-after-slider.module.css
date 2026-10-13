@@ -17,3 +17,17 @@
 .beforeLabel { left: .75rem; }
 .afterLabel { right: .75rem; }
 .figure figcaption { font-size: .85rem; margin-top: .6rem; text-align: center; }
+.mobileArrow { display: none; }
+.mobileTouchSurface { display: none; }
+
+@media (max-width: 767px) {
+  .divider { width: .4375rem; }
+  .divider span { font-size: 0; height: 2.875rem; width: 2.875rem; }
+  .mobileArrow { display: block; }
+  .range { height: 100%; touch-action: pan-y; }
+  .mobileTouchSurface { cursor: ew-resize; display: block; inset: 0; position: absolute; touch-action: pan-y; z-index: 4; }
+  .slider:focus-within .divider span { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .label { align-items: center; display: flex; font-size: .6875rem; font-weight: 700; height: 1.6875rem; justify-content: center; letter-spacing: .05rem; padding: 0 .375rem; width: 4.0625rem; }
+  .figure figcaption { font-size: .8125rem; line-height: 1.4; margin-top: .666875rem; }
+  .captionLine { display: block; }
+}

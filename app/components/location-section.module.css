@@ -21,3 +21,20 @@
 }
 
 @media (prefers-reduced-motion: reduce) { .mapLink img { transition: none; } }
+
+@media (max-width: 767px) {
+  .section { padding: 2rem 1.25rem 2.5rem; scroll-margin-top: 4.5rem; }
+  .eyebrow { font-size: .75rem; font-weight: 700; line-height: 1.2; margin: 0 0 1.9125rem; }
+  .title { font-size: clamp(2.4rem, 11.7333vw, 3rem); font-weight: 700; letter-spacing: -.0375em; line-height: .9; }
+  .title span { margin-top: .225em; padding: .08em .15em .1em; }
+  .details { gap: 1.5rem; margin: 2rem auto 1.5rem; }
+  .details article { padding-top: 1.25rem; }
+  .details h3 { font-size: 1rem; font-weight: 700; margin-bottom: .75rem; }
+  .details address, .details p, .details a { font-size: .9375rem; line-height: 1.5; }
+  .details article:first-child p { margin-top: .5rem; }
+  .details a { align-items: center; display: flex; font-weight: 700; justify-content: center; margin-top: 0; min-height: 2.75rem; }
+  .details a:first-of-type { margin-top: .5rem; }
+  .details a:focus-visible, .mapLink:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+  .mapLink { border: 1px solid rgb(13 13 13 / 15%); border-radius: 1.25rem; }
+  .mapLink span { align-items: center; bottom: 0; display: flex; font-size: .6875rem; font-weight: 700; justify-content: center; left: 0; min-height: 2.75rem; padding: .625rem; right: 0; }
+}

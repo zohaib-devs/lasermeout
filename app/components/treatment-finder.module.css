@@ -89,3 +89,78 @@
 }
 
 @media (prefers-reduced-motion: reduce) { .machine { animation: none; } .tab, .tabActive { transition: none; } }
+
+/* Mobile treatment finder follows the stacked Pencil layout. */
+@media (max-width: 767px) {
+  .section {
+    align-content: start;
+    gap: 0;
+    min-height: 56.125rem;
+    padding: 3.125rem 1.25rem .25rem;
+    scroll-margin-top: 4.5rem;
+  }
+
+  .machine {
+    animation: none;
+    right: 6.1333%;
+    top: -2.125rem;
+    width: clamp(5.5rem, 27.2vw, 7.125rem);
+  }
+
+  .intro { gap: 0; max-width: 100%; width: 100%; }
+  .intro h2 { font-size: .6875rem; letter-spacing: -.04em; }
+  .tagline {
+    font-size: clamp(1.8rem, 9.3333vw, 2.4375rem);
+    font-weight: 700;
+    letter-spacing: -.03em;
+    line-height: .82;
+    margin-top: 1.0625rem;
+    max-width: none;
+  }
+  .taglineLine { display: block; white-space: nowrap; }
+  .taglineLine + .taglineLine { margin-top: .1875rem; }
+  .forever { padding: .02857em .17143em .08571em; }
+  .introCopy { font-size: .9375rem; line-height: 1.45; margin-top: 1rem; max-width: none; min-height: 6.625rem; }
+
+  .finder { gap: 0; margin-top: 1.875rem; }
+  .tabs { gap: .5rem; }
+  .tab, .tabActive { font-size: .75rem; min-height: 2.75rem; padding: .5rem .875rem; }
+  .tab:first-child, .tabActive:first-child { min-width: 5.5rem; }
+  .tab:last-child, .tabActive:last-child { min-width: 3.5625rem; }
+
+  .mustHave {
+    font-size: clamp(1.8rem, 9.3333vw, 2.4375rem);
+    font-weight: 700;
+    letter-spacing: -.03em;
+    line-height: .8;
+    margin-top: 1.75rem;
+  }
+  .mustHave strong { margin-top: .5rem; }
+
+  .featuredAreaButtons {
+    display: block;
+    margin-top: 2.125rem;
+    position: relative;
+    width: 100%;
+  }
+  .featuredAreaStack { margin-inline: auto; width: 8.375rem; }
+  .featuredArea, .featuredAreaActive {
+    font-size: .75rem;
+    min-width: 0;
+    padding: .5rem;
+    transition: background-color .2s ease, color .2s ease;
+    will-change: auto;
+  }
+  .featuredArea:hover, .featuredAreaActive:hover { transform: none; }
+  .featuredArrows { position: absolute; right: -.25rem; top: 1.625rem; }
+
+  .bodyArt { margin-top: 1.5rem; transform: none; width: 10rem; }
+  .footerNote { font-size: .75rem; letter-spacing: .005em; line-height: 1.15; margin-top: .75rem; max-width: 19.6875rem; }
+  .tab:focus-visible, .tabActive:focus-visible,
+  .featuredArea:focus-visible, .featuredAreaActive:focus-visible,
+  .featuredArrows button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .featuredArea, .featuredAreaActive, .featuredArrows button { transition: none; }
+}

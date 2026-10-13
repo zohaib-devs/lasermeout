@@ -117,8 +117,8 @@ export default function PackageCarousel() {
         ))}
       </div>
       <div className={styles.controls} aria-label="Browse packages">
-        <button type="button" onClick={() => goTo(activeIndex - 1)} aria-label="Previous package">←</button>
-        <button type="button" onClick={() => goTo(activeIndex + 1)} aria-label="Next package">→</button>
+        <button type="button" onClick={() => goTo(activeIndex - 1)} aria-label="Previous package"><span className={styles.desktopArrow} aria-hidden="true">←</span><svg className={styles.mobileArrow} aria-hidden="true" viewBox="0 0 26 16" fill="none"><path d="M25 8H1m7-7L1 8l7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
+        <button type="button" onClick={() => goTo(activeIndex + 1)} aria-label="Next package"><span className={styles.desktopArrow} aria-hidden="true">→</span><svg className={styles.mobileArrow} aria-hidden="true" viewBox="0 0 26 16" fill="none"><path d="M1 8h24m-7-7 7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></button>
       </div>
     </section>
   );

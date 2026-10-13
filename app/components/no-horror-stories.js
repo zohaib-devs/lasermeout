@@ -27,7 +27,7 @@ export default function NoHorrorStories() {
         alt="Illustrated Laser Me Out treatment machine"
         width={900}
         height={900}
-        sizes="(max-width: 767px) 54vw, 27vw"
+        sizes="(max-width: 767px) 70px, 27vw"
       />
 
       <header className={styles.heading}>
@@ -55,9 +55,9 @@ export default function NoHorrorStories() {
         ))}
       </div>
 
-      <p className={styles.packageNote}>{activePackage.note}</p>
+      <p className={styles.packageNote} aria-live="polite">{activeOption === "packages" ? <>Shaving: £50 per area<span className={styles.noteDetail}> (excluding intimate areas and face)</span></> : activePackage.note}</p>
       <a className={styles.overviewLink} href="#treatments">
-        Show zone overview <span aria-hidden="true">→</span>
+        Show zone overview <span aria-hidden="true">→</span><svg className={styles.mobileArrow} aria-hidden="true" viewBox="0 0 16 10" fill="none"><path d="M1 5h14m-4-4 4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </a>
     </section>
   );

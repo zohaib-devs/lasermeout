@@ -17,7 +17,7 @@ export default function ContactForm() {
         <p className={styles.eyebrow}>Email &amp; phone</p>
         <h2 id="contact-title" className={styles.title}>Get in <span>touch</span></h2>
         <p className={styles.intro}>
-          Questions, concerns, or ready to get smooth? Fill in the form or call us on <a href="tel:+442077884712">020 7788 4712</a>.
+          Questions, concerns, or ready to get smooth? Fill in the form or call us on <a href="tel:+442077884712">020 7788 4712</a><span className={styles.phonePeriod}>.</span>
         </p>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.fields}>

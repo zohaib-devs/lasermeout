@@ -29,8 +29,8 @@ export default function Home() {
               alt="Woman jumping joyfully"
               width={1024}
               height={1536}
-              priority
-              sizes="(max-width: 767px) 72vw, 38vw"
+              preload
+              sizes="(max-width: 767px) 38vw, 38vw"
             />
           </div>
         </div>
@@ -40,8 +40,8 @@ export default function Home() {
           alt="Illustrated flying laser"
           width={1293}
           height={1200}
-          priority
-          sizes="(max-width: 767px) 34vw, 23vw"
+          preload
+          sizes="(max-width: 767px) 26vw, 23vw"
         />
         <span className={styles.heroLocations}>London + Birmingham</span>
       </main>
@@ -52,7 +52,7 @@ export default function Home() {
           alt="Soprano Titanium laser applicator"
           width={1086}
           height={1448}
-          sizes="(max-width: 767px) 34vw, 19vw"
+          sizes="(max-width: 767px) 22vw, 19vw"
         />
         <div className={styles.sopranoContent}>
           <h2 id="soprano-title" className={styles.sopranoTitle}>
@@ -71,7 +71,7 @@ export default function Home() {
           alt="Soprano Titanium laser handpiece"
           width={1122}
           height={1402}
-          sizes="(max-width: 767px) 30vw, 16vw"
+          sizes="(max-width: 767px) 22vw, 16vw"
         />
       </section>
       <div className={styles.blackContainer}>
@@ -97,12 +97,18 @@ export default function Home() {
               src="/images/london.png"
               alt="Laser Me Out London clinic exterior"
               fill
-              sizes="(max-width: 767px) 64vw, 30vw"
+              sizes="(max-width: 767px) 53vw, 30vw"
             />
           </a>
-          <span className={`${styles.locationLabel} ${styles.londonLabel}`}>
+          <a
+            className={`${styles.locationLabel} ${styles.londonLabel}`}
+            href="https://www.phorest.com/salon/lasermeout"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Book a London consultation"
+          >
             London
-          </span>
+          </a>
           <a
             className={styles.birminghamImageWrap}
             href="https://www.phorest.com/salon/lasermeout1"
@@ -115,24 +121,35 @@ export default function Home() {
               src="/images/girmingham.png"
               alt="Laser Me Out Birmingham clinic exterior"
               fill
-              sizes="(max-width: 767px) 48vw, 23vw"
+              sizes="(max-width: 767px) 55vw, 23vw"
             />
           </a>
-          <span className={`${styles.locationLabel} ${styles.birminghamLabel}`}>
+          <a
+            className={`${styles.locationLabel} ${styles.birminghamLabel}`}
+            href="https://www.phorest.com/salon/lasermeout1"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Book a Birmingham consultation"
+          >
             Birmingham
-          </span>
+          </a>
         </div>
       </section>
       <TreatmentFinder />
       <HorizontalScrollSection stackOnMobile>
-      <section className={styles.fuzzFreeZone} aria-labelledby="fuzz-free-title">
+      <section id="fuzz-free" className={styles.fuzzFreeZone} aria-labelledby="fuzz-free-title">
         <div className={styles.fuzzFreeCopy}>
           <h2 id="fuzz-free-title">
             <span>This is a fuzz</span>
             <span>Free zone</span>
           </h2>
           <p className={styles.fuzzFreeText}>If you’re ready to say goodbye to ingrowns, strawberry legs and dark patches, it’s time to get serious and Laser Me Out. Our secret weapon is the LMO prep step - dry brushing. It lets the light get right down deep, zapping even more hairs than with a basic laser treatment alone.</p>
-          <a className={styles.fuzzFreeCta} href="#consultation">Claim your smooth <span aria-hidden="true">→</span></a>
+          <a className={styles.fuzzFreeCta} href="#consultation">
+            Claim your smooth <span aria-hidden="true">→</span>
+            <svg className={styles.mobileCtaArrow} aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M1 9h15m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="2" />
+            </svg>
+          </a>
         </div>
         <div className={styles.strawberryFrame}>
           <Image
@@ -141,7 +158,7 @@ export default function Home() {
             alt="Illustrated strawberry with smooth legs"
             width={1024}
             height={1536}
-            sizes="(max-width: 767px) 62vw, 30vw"
+            sizes="(max-width: 767px) 50vw, 30vw"
           />
         </div>
         <div className={styles.shavingFrame}>
@@ -151,7 +168,7 @@ export default function Home() {
             alt="Illustrated razor"
             width={1254}
             height={1254}
-            sizes="(max-width: 767px) 70vw, 18rem"
+            sizes="(max-width: 767px) 23vw, 18rem"
           />
           <Image
             className={styles.cactusImage}
@@ -159,10 +176,10 @@ export default function Home() {
             alt="Illustrated prickly cactus"
             width={1254}
             height={1254}
-            sizes="(max-width: 767px) 70vw, 18rem"
+            sizes="(max-width: 767px) 58vw, 18rem"
           />
         </div>
-        <div className={styles.lmoDifferenceCopy}>
+        <div id="lmo-difference" className={styles.lmoDifferenceCopy}>
           <h2 id="lmo-difference-title">The LMO difference</h2>
           <p className={styles.lmoDifferenceText}>We’re not a laser chop shop package deal you got for 50% off online or a cheap DIY home kit you impulse bought on the ‘gram. Our clinic is located in London’s medical district and uses top-of-the-range equipment with expert prep practices to give you the trans-formative skinsperience you’re looking for. It’s time to invest adult money into your skin so you can get real results.</p>
         </div>
@@ -174,13 +191,13 @@ export default function Home() {
               alt="Shireen Forster at the clinic"
               width={500}
               height={500}
-              sizes="(max-width: 767px) 52vw, 12vw"
+              sizes="(max-width: 767px) 58vw, 12vw"
             />
           </div>
           <p className={styles.shireenName}>Shireen Forster</p>
           <p className={styles.shireenRole}>Founder, Laser Me Out</p>
         </div>
-        <section className={styles.whoWeHelp} aria-labelledby="who-we-help-title">
+        <section id="who-we-help" className={styles.whoWeHelp} aria-labelledby="who-we-help-title">
           <h2 id="who-we-help-title">Who we help</h2>
           <ul>
             <li><strong>All skin types</strong><span>Our laser hair treatments work on any pigmented hair.</span></li>
@@ -196,10 +213,10 @@ export default function Home() {
             alt="Illustrated strawberry with smooth legs"
             width={1024}
             height={1536}
-            sizes="(max-width: 767px) 64vw, 18vw"
+            sizes="(max-width: 767px) 56vw, 18vw"
           />
         </div>
-        <section className={styles.newbieFriendly} aria-labelledby="newbie-friendly-title">
+        <section id="newbie-friendly" className={styles.newbieFriendly} aria-labelledby="newbie-friendly-title">
           <div className={styles.newbieCopy}>
             <h2 id="newbie-friendly-title">Newbie friendly</h2>
             <p>We think it’s super important for newbies to come to a high-quality clinic like ours. Why? For the prep work. Poor prep leads to bad results and we want your first experience to be excellent. So, we always recommend you get the shaving add-on with your service too. Then you can just rock up and we’ll do the rest! Simple! We’ll talk you through every step before your first treatment. You’ll always know what to expect and how to care for your skin afterwards. We’ve got you.</p>
@@ -212,14 +229,14 @@ export default function Home() {
               alt="Raja, Laser Me Out marketing manager"
               width={500}
               height={561}
-              sizes="(max-width: 767px) 64vw, 22vw"
+              sizes="(max-width: 767px) 54vw, 22vw"
             />
             <p className={styles.rajaBadge}><strong>Raja</strong><span>Marketing manager</span></p>
           </div>
         </section>
       </section>
       </HorizontalScrollSection>
-      <section className={styles.seriousKit} aria-labelledby="serious-kit-title">
+      <section id="serious-kit" className={styles.seriousKit} aria-labelledby="serious-kit-title">
         <div className={styles.seriousKitIntro}>
           <p className={styles.seriousKitEyebrow}>A bunch of serious kit</p>
           <h2 id="serious-kit-title">
@@ -236,7 +253,7 @@ export default function Home() {
             alt="Soprano Titanium laser handpiece"
             width={1122}
             height={1402}
-            sizes="(max-width: 767px) 42vw, 18vw"
+            sizes="(max-width: 767px) 47vw, 18vw"
           />
         </div>
       </section>
@@ -249,10 +266,10 @@ export default function Home() {
         </h2>
         <p className={styles.smoothSkinCopy}>What are your hair-free vibes? Wanna be more comfy raising your arms or willing to show off your legs? Do you have a touchable back or a slick-feeling chest? It&apos;s all possible. Peep our gag-worthy results.</p>
       </section>
-      <section className={styles.resultsComparison} aria-label="Laser hair removal before and after comparison">
+      <section id="comparison" className={styles.resultsComparison} aria-label="Laser hair removal before and after comparison">
         <BeforeAfterSlider />
       </section>
-      <section className={styles.whyChooseUs} aria-labelledby="why-choose-us-title">
+      <section id="why-choose-us" className={styles.whyChooseUs} aria-labelledby="why-choose-us-title">
         <div className={styles.whyChooseUsCard}>
           <span className={styles.justFacts}>Just facts</span>
           <div className={styles.whyChooseUsCopy}>
@@ -271,11 +288,11 @@ export default function Home() {
             alt="Illustrated dry-brushing kit with an aloe plant, book, and body brush"
             width={1024}
             height={1024}
-            sizes="(max-width: 767px) 70vw, 22rem"
+            sizes="(max-width: 767px) 67vw, 22rem"
           />
         </div>
       </section>
-      <section className={styles.howItWorks} aria-labelledby="how-it-works-title">
+      <section id="how-it-works" className={styles.howItWorks} aria-labelledby="how-it-works-title">
         <div className={styles.howItWorksIntro}>
           <div className={styles.rabiaProfile}>
             <Image
@@ -294,7 +311,7 @@ export default function Home() {
           <div className={styles.howItWorksLead}>
             <h2>Three steps to<br />touchable skin</h2>
             <p>It&apos;s as close as you can get to ‘abracadabra’ without a magic wand.</p>
-            <span className={styles.howItWorksArrow} aria-hidden="true">↓</span>
+            <span className={styles.howItWorksArrow} aria-hidden="true">↓<svg className={styles.mobileDownArrow} width="18" height="26" viewBox="0 0 18 26" fill="none"><path d="M9 1v24m-8-8 8 8 8-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
           </div>
         </div>
         <article className={styles.howItWorksCard}>
@@ -307,8 +324,8 @@ export default function Home() {
           </nav>
         </article>
       </section>
-      <HorizontalScrollSection>
-        <section className={styles.treatmentSteps} aria-label="The three steps to touchable skin">
+      <HorizontalScrollSection stackOnMobile>
+        <section id="treatment-steps" className={styles.treatmentSteps} aria-label="The three steps to touchable skin">
           <article className={styles.treatmentStep}>
             <span className={styles.stepNumber}>Step one</span>
             <Image className={styles.stepIllustration} src="/images/board.webp" alt="Illustrated consultation clipboard" width={500} height={500} sizes="(max-width: 767px) 55vw, 14rem" />
@@ -368,7 +385,7 @@ export default function Home() {
             alt="Woman enjoying smooth skin"
             width={500}
             height={1125}
-            sizes="(max-width: 767px) 52vw, 17rem"
+            sizes="(max-width: 767px) 40vw, 17rem"
           />
         </article>
         <Image
@@ -387,7 +404,7 @@ export default function Home() {
             alt="Two men enjoying smooth skin"
             width={600}
             height={900}
-            sizes="(max-width: 767px) 56vw, 19rem"
+            sizes="(max-width: 767px) 48vw, 19rem"
           />
           <div className={styles.audienceHimCopy}>
             <h2>Laser hair<br />removal<br />for men</h2>
@@ -436,7 +453,7 @@ export default function Home() {
           sizes="(max-width: 767px) 34vw, 17rem"
         />
       </section>
-      <section className={styles.lastBit} aria-labelledby="last-bit-title">
+      <section id="every-last-bit" className={styles.lastBit} aria-labelledby="last-bit-title">
         <div className={styles.lastBitPortrait}>
           <Image
             className={styles.lastBitChloe}
@@ -444,7 +461,7 @@ export default function Home() {
             alt="Laser Me Out therapist in a yellow uniform"
             width={800}
             height={1200}
-            sizes="(max-width: 767px) 72vw, 22rem"
+            sizes="(max-width: 767px) 260px, 22rem"
           />
           <div className={styles.lastBitRuler} aria-hidden="true">
             <span />
@@ -452,12 +469,12 @@ export default function Home() {
           </div>
         </div>
         <article className={styles.lastBitCopy}>
-          <h2 id="last-bit-title">We mean every last bit!</h2>
+          <h2 id="last-bit-title">We mean every <span>last bit!</span></h2>
           <p>At Laser Me Out, our top-to-tail laser hair removal package covers every area you can imagine. From head to toe, including the face, genitals and even the peri-anal area; we&apos;ve got you covered.</p>
           <p>Our skilled professionals are trained to handle larger areas like your legs, arms and back, as well as more delicate areas like the face and bum. Whether you want a completely hair-free face or a Hollywood-style bikini line, we&apos;ll tailor every treatment to meet your unique needs.</p>
           <nav className={styles.lastBitActions} aria-label="Make an appointment or contact us">
-            <a href="#consultation">Make an appointment <span aria-hidden="true">→</span></a>
-            <a href="#contact">Talk to us <span aria-hidden="true">→</span></a>
+            <a href="#consultation">Make an appointment <span aria-hidden="true">→</span><svg className={styles.lastBitMobileArrow} aria-hidden="true" viewBox="0 0 20 12" fill="none"><path d="M1 6h18m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
+            <a href="#contact">Talk to us <span aria-hidden="true">→</span><svg className={styles.lastBitMobileArrow} aria-hidden="true" viewBox="0 0 20 12" fill="none"><path d="M1 6h18m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
           </nav>
         </article>
       </section>
@@ -479,6 +496,7 @@ export default function Home() {
         <div className={styles.footerInner}>
           <a className={styles.footerLogo} href="#top" aria-label="Laser Me Out home">
             <span>Laser</span><span>Me</span><span>Out</span>
+            <Image className={styles.footerMobileLogo} src="/images/header-wordmark.png" alt="" width={360} height={90} sizes="180px" />
           </a>
           <div className={styles.footerLinks}>
             <section aria-labelledby="footer-visit-title">
@@ -496,10 +514,10 @@ export default function Home() {
             </section>
           </div>
           <nav className={styles.footerSocials} aria-label="Social media">
-            <a href="https://www.instagram.com/lasermeout" target="_blank" rel="noreferrer" aria-label="Instagram"><span aria-hidden="true">◎</span></a>
-            <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><span aria-hidden="true">f</span></a>
-            <a href="https://www.tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok"><span aria-hidden="true">♪</span></a>
-            <a href="https://wa.me/" target="_blank" rel="noreferrer" aria-label="WhatsApp"><span aria-hidden="true">◔</span></a>
+            <a href="https://www.instagram.com/lasermeout" target="_blank" rel="noreferrer" aria-label="Instagram"><span aria-hidden="true">◎</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" /><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" /><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" /></svg></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><span aria-hidden="true">f</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 22v-9h3l.5-4H14V7c0-1.1.4-2 2-2h2V1.5c-.6-.1-1.8-.3-3-.3-3 0-5 1.8-5 5V9H7v4h3v9z" /></svg></a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok"><span aria-hidden="true">♪</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3v12a5 5 0 1 1-5-5v3a2 2 0 1 0 2 2V3h3c.6 3 2.7 4.8 6 5v3c-2.3-.1-4.4-1-6-2.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
+            <a href="https://wa.me/" target="_blank" rel="noreferrer" aria-label="WhatsApp"><span aria-hidden="true">◔</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.7-4.5A9 9 0 1 1 21 11.5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="m8 7 2 3-1 1c1 2 2 3 4 4l1-1 3 2c-.6 1.6-2 2-3.5 1.5-3-1-6-4-7-7C6 9 6.5 7.6 8 7Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" /></svg></a>
           </nav>
         </div>
         <Image

@@ -503,21 +503,21 @@ export default function Home() {
               <h2 id="footer-visit-title">Most visited</h2>
               <a href="#treatments">Bye hair</a>
               <a href="#package-carousel">Guilt-free pricing</a>
-              <a href="#treatments">PCOS membership</a>
-              <a href="#terms">Terms &amp; conditions</a>
+              <a href="https://www.lasermeout.com/#pmos" target="_blank" rel="noreferrer">PCOS membership</a>
+              <a href="https://www.lasermeout.com/legal/terms-conditions" target="_blank" rel="noreferrer">Terms &amp; conditions</a>
             </section>
             <section aria-label="More Laser Me Out links">
-              <a href="#about">Team LMO</a>
-              <a href="#talk">LMO talk</a>
+              <a href="https://www.lasermeout.com/#team" target="_blank" rel="noreferrer">Team LMO</a>
+              <a href="https://www.lasermeout.com/blog" target="_blank" rel="noreferrer">LMO talk</a>
               <a href="#contact">Contact us</a>
-              <a href="#faqs">FAQs</a>
+              <a href="https://www.lasermeout.com/faq" target="_blank" rel="noreferrer">FAQs</a>
             </section>
           </div>
           <nav className={styles.footerSocials} aria-label="Social media">
             <a href="https://www.instagram.com/lasermeout" target="_blank" rel="noreferrer" aria-label="Instagram"><span aria-hidden="true">◎</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" /><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" /><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" /></svg></a>
-            <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><span aria-hidden="true">f</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 22v-9h3l.5-4H14V7c0-1.1.4-2 2-2h2V1.5c-.6-.1-1.8-.3-3-.3-3 0-5 1.8-5 5V9H7v4h3v9z" /></svg></a>
-            <a href="https://www.tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok"><span aria-hidden="true">♪</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3v12a5 5 0 1 1-5-5v3a2 2 0 1 0 2 2V3h3c.6 3 2.7 4.8 6 5v3c-2.3-.1-4.4-1-6-2.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
-            <a href="https://wa.me/" target="_blank" rel="noreferrer" aria-label="WhatsApp"><span aria-hidden="true">◔</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.7-4.5A9 9 0 1 1 21 11.5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="m8 7 2 3-1 1c1 2 2 3 4 4l1-1 3 2c-.6 1.6-2 2-3.5 1.5-3-1-6-4-7-7C6 9 6.5 7.6 8 7Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" /></svg></a>
+            <a href="https://www.facebook.com/lasermeout" target="_blank" rel="noreferrer" aria-label="Facebook"><span aria-hidden="true">f</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 22v-9h3l.5-4H14V7c0-1.1.4-2 2-2h2V1.5c-.6-.1-1.8-.3-3-.3-3 0-5 1.8-5 5V9H7v4h3v9z" /></svg></a>
+            <a href="https://www.tiktok.com/@lasermeout" target="_blank" rel="noreferrer" aria-label="TikTok"><span aria-hidden="true">♪</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3v12a5 5 0 1 1-5-5v3a2 2 0 1 0 2 2V3h3c.6 3 2.7 4.8 6 5v3c-2.3-.1-4.4-1-6-2.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
+            <a href="https://wa.me/442077884712" target="_blank" rel="noreferrer" aria-label="WhatsApp"><span aria-hidden="true">◔</span><svg className={styles.footerMobileIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.7-4.5A9 9 0 1 1 21 11.5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" /><path d="m8 7 2 3-1 1c1 2 2 3 4 4l1-1 3 2c-.6 1.6-2 2-3.5 1.5-3-1-6-4-7-7C6 9 6.5 7.6 8 7Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" /></svg></a>
           </nav>
         </div>
         <Image
@@ -530,7 +530,7 @@ export default function Home() {
         />
         <div className={styles.footerBar}>
           <span>© Laser Me Out 2026</span>
-          <a id="terms" href="#terms">Legal</a>
+          <a id="terms" href="https://www.lasermeout.com/legal/terms-conditions" target="_blank" rel="noreferrer">Legal</a>
           <span>Designed &amp; developed by Wagemut.studio</span>
         </div>
       </footer>

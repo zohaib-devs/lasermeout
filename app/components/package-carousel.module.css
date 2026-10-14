@@ -245,4 +245,8 @@
   .controls { gap: 2.3125rem; margin-top: 1.0625rem; }
   .desktopArrow { display: none; }
   .mobileArrow { display: block; height: 1rem; width: 1.625rem; }
+  .card { --text: #111111; --price-text: #111111; }
+  .yellow, .pink { --text: #7f260f; --price-text: #111111; }
+  .lilac { --text: #4f2a60; --price-text: #111111; }
+  .badge { color: #111111; }
 }

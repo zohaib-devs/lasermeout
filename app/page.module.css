@@ -1645,3 +1645,27 @@
   .footerBar a { align-items: center; display: flex; justify-content: center; min-height: 2.75rem; }
   .footerBar span:last-child { font-size: .625rem; line-height: 1.5; }
 }
+
+/* Keep the mobile palette while giving text sufficient contrast on bright cards. */
+@media (max-width: 767px) {
+  .fuzzFreeZone, .seriousKit, .whyChooseUs, .howItWorks, .treatmentSteps, .audienceTreatments {
+    --readable-orange: #7f260f;
+    --readable-purple: #4f2a60;
+  }
+  .locationLabel { color: var(--ink); }
+  .shireenName, .whoWeHelp li strong { color: var(--readable-purple); }
+  .seriousKit h2 span:first-child, .seriousKit h2 span:last-child { color: var(--readable-purple); }
+  .whyChooseUsCopy h2 { color: var(--readable-orange); }
+  .whyChooseUsList li, .howItWorksCard { color: var(--readable-orange); }
+  .justFacts { color: var(--ink); }
+  .rabiaBadge strong, .rabiaBadge span, .goPro { color: var(--readable-purple); }
+  .howItWorksLinks a, .stepCopy { color: var(--readable-purple); }
+  .stepCopy p { color: var(--ink); }
+  .stepNumber { color: var(--readable-orange); }
+  .audienceHerCopy { color: var(--readable-orange); }
+  .audienceHimCopy p, .audienceHimCopy a { color: var(--ink); }
+  .audienceThemCopy { color: var(--readable-orange); }
+  .audienceHerCopy a, .audienceThemCopy a, .audienceTab { color: var(--readable-purple); }
+  .audienceCardHer .audienceTab { color: var(--ink); }
+  .audienceCardHim .audienceTab { color: var(--readable-orange); }
+}

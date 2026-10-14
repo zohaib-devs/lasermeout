@@ -58,7 +58,7 @@
   transform: scale(1);
 }
 
-.yellow { --surface: #ffff00; --text: #f44b14; --badge: #b9a6d0; --price: #f44b14; }
+.yellow { --surface: #ffff00; --text: #f44b14; --badge: #b9a6d0; --price: #f44b14; --price-text: #ffff00; }
 .pink { --surface: #efa9da; --text: #f44b14; --badge: #f44b14; --price: #ffff00; }
 .lilac { --surface: #b9a6d0; --text: #ffff00; --badge: #efa9da; --price: #f44b14; }
 
@@ -113,7 +113,7 @@
 .priceList dd {
   background: var(--price);
   border-radius: .55rem;
-  color: var(--text);
+  color: var(--price-text, var(--text));
   font-size: 1.25rem;
   font-weight: 900;
   letter-spacing: -.06em;

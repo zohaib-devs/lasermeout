@@ -222,7 +222,10 @@ export default function Home() {
             <p>We think it’s super important for newbies to come to a high-quality clinic like ours. Why? For the prep work. Poor prep leads to bad results and we want your first experience to be excellent. So, we always recommend you get the shaving add-on with your service too. Then you can just rock up and we’ll do the rest! Simple! We’ll talk you through every step before your first treatment. You’ll always know what to expect and how to care for your skin afterwards. We’ve got you.</p>
           </div>
           <div className={styles.newbieRaja}>
-            <p className={styles.rajaBubble}>Speak to an<br />expert</p>
+            <p className={styles.rajaBubble}>
+              <Image className={styles.rajaBubbleShape} src="/images/raja-speech-bubble.png" alt="" width={1654} height={951} sizes="(max-width: 767px) 240px, 1px" />
+              <span className={styles.rajaBubbleText}>Speak to an<br />expert</span>
+            </p>
             <Image
               className={styles.rajaImage}
               src="/images/raja-sahib.webp"

@@ -625,6 +625,7 @@
 .newbieRaja { justify-self: center; min-height: 19rem; position: relative; width: min(70vw, 20rem); }
 .rajaBubble { align-items: center; background: var(--paper); border: 2px solid var(--ink); border-radius: 50%; color: var(--orange); display: flex; font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif; font-size: clamp(1.5rem, 7vw, 2.8rem); font-weight: 900; height: 10rem; justify-content: center; line-height: .95; margin: 0; position: absolute; right: 20%; text-align: center; text-shadow: 1px 1px 0 var(--ink); text-transform: uppercase; top: 0; transform: none; width: 15rem; }
 .rajaBubble::after { background: var(--paper); border-bottom: 2px solid var(--ink); border-right: 2px solid var(--ink); bottom: -.65rem; content: ""; height: 1.5rem; position: absolute; right: 1.75rem; transform: rotate(22deg) skewY(-22deg); width: 1.5rem; }
+.rajaBubbleShape { display: none; }
 .rajaImage { bottom: 0; display: block; height: auto; position: absolute; right: 0; transform: scale(1.1); width: min(72%, 15rem); z-index: 1; }
 .rajaBadge { background: var(--orange); bottom: .7rem; color: var(--paper); display: grid; left: 0; margin: 0; padding: .65rem 1rem; position: absolute; text-align: center; text-transform: uppercase; transform: translate(5%, 20%); width: 78%; z-index: 2; }
 .rajaBadge strong { color: var(--acid-yellow); font-size: 1.35rem; letter-spacing: -.06em; line-height: .85; }
@@ -1378,35 +1379,40 @@
     min-height: 14.4375rem;
     text-align: center;
   }
-  .newbieRaja { height: 24.375rem; margin-top: 2rem; min-height: 0; width: 100%; }
+  .newbieRaja { height: 25.625rem; margin-top: 2rem; min-height: 0; width: 100%; }
   .rajaBubble {
     font-family: inherit;
     font-size: clamp(1.25rem, 6.4vw, 1.65rem);
     height: 7.875rem;
-    left: .125rem;
+    left: 50%;
     letter-spacing: -.03em;
     right: auto;
     width: min(57.6vw, 15rem);
+    transform: translateX(-50%);
   }
-  .rajaBubble::after { bottom: -.5625rem; height: 1.75rem; width: 1.625rem; }
+  .rajaBubble { background: transparent; border: 0; }
+  .rajaBubble::after { content: none; }
+  .rajaBubbleShape { display: block; height: 100%; inset: 0; object-fit: fill; position: absolute; width: 100%; }
+  .rajaBubbleText { position: relative; transform: translateY(-.375rem); z-index: 1; }
   .rajaImage {
     bottom: auto;
     height: 14.875rem;
-    left: 32.8358%;
+    left: 50%;
     object-fit: contain;
     right: auto;
-    top: 6.25rem;
-    transform: none;
+    top: 7.5rem;
+    transform: translateX(-50%);
     width: min(53.968vw, 14rem);
   }
   .rajaBadge {
     align-content: start;
     bottom: auto;
     height: 4.375rem;
-    left: 12.0896%;
+    left: 50%;
+    right: auto;
     padding: .5rem 1rem;
-    top: 20rem;
-    transform: none;
+    top: 21.25rem;
+    transform: translateX(-50%);
     width: 75.8209%;
   }
   .rajaBadge strong { font-size: 1.5rem; letter-spacing: -.04em; line-height: 1.2; }

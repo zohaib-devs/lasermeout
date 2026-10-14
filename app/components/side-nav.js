@@ -1,34 +1,58 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./side-nav.module.css";
 
 const navigation = [
-  "Treatments",
-  "Packages",
-  "Results",
-  "The LMO way",
-  "About us",
-  "Visit us",
-  "Contact",
+  { label: "Treatments", href: "#treatments" },
+  { label: "Packages", href: "#packages" },
+  { label: "Results", href: "#results" },
+  { label: "The LMO way", href: "#how-it-works" },
+  { label: "About us", href: "#lmo-difference" },
+  { label: "Visit us", href: "#visit-us" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function SideNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const railRef = useRef(null);
+  const overlayRef = useRef(null);
+  const menuButtonRef = useRef(null);
 
   useEffect(() => {
-    const closeOnEscape = (event) => {
-      if (event.key === "Escape") setIsOpen(false);
+    if (!isOpen) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    const content = document.querySelector(".site-content");
+    const previousInert = content?.inert;
+    document.body.style.overflow = "hidden";
+    if (content) content.inert = true;
+    overlayRef.current?.querySelector("nav a")?.focus({ preventScroll: true });
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setIsOpen(false);
+        menuButtonRef.current?.focus({ preventScroll: true });
+      }
+      if (event.key !== "Tab") return;
+      const controls = [railRef.current, overlayRef.current].flatMap((element) =>
+        [...element.querySelectorAll("a[href], button")].filter((control) => control.getClientRects().length)
+      );
+      const first = controls[0];
+      const last = controls.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
     };
-
-    window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      if (content) content.inert = previousInert;
     };
   }, [isOpen]);
 
@@ -36,8 +60,8 @@ export default function SideNav() {
 
   return (
     <>
-      <aside className={`${styles.rail} ${isOpen ? styles.railMenuOpen : ""}`} aria-label="Primary navigation">
-        <a className={styles.logo} href="#top" aria-label="Laser Me Out home">
+      <aside ref={railRef} className={`${styles.rail} ${isOpen ? styles.railMenuOpen : ""}`} aria-label="Primary navigation">
+        <a className={styles.logo} href="#top" aria-label="Laser Me Out home" onClick={closeMenu}>
           <span className={styles.wordmark}>
             <span>Laser</span>
             <span>Me</span>
@@ -51,6 +75,7 @@ export default function SideNav() {
             <span className={styles.consultationFull}>Book a consultation</span>
           </a>
           <button
+            ref={menuButtonRef}
             className={styles.menuButton}
             type="button"
             aria-label={isOpen ? "Close navigation" : "Open navigation"}
@@ -72,6 +97,7 @@ export default function SideNav() {
       </aside>
 
       <div
+        ref={overlayRef}
         className={`${styles.overlay} ${isOpen ? styles.overlayOpen : ""}`}
         id="site-navigation"
         aria-hidden={!isOpen}
@@ -84,16 +110,16 @@ export default function SideNav() {
           <p className={styles.kicker}>Smooth moves only</p>
           <ul>
             {navigation.map((item, index) => (
-              <li key={item} style={{ "--item-index": index }}>
-                <a href={`#${item.toLowerCase().replaceAll(" ", "-")}`} onClick={closeMenu}>
+              <li key={item.label} style={{ "--item-index": index }}>
+                <a href={item.href} onClick={closeMenu}>
                   <span>0{index + 1}</span>
-                  {item}
+                  {item.label}
                 </a>
               </li>
             ))}
           </ul>
           <div className={styles.menuFooter}>
-            <a href="mailto:hello@lasermeout.com">hello@lasermeout.com</a>
+            <a href="mailto:hello@lasermeout.com" onClick={closeMenu}>hello@lasermeout.com</a>
             <a href="#consultation" onClick={closeMenu}>Book a consultation ↗</a>
           </div>
         </nav>

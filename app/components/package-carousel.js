@@ -49,7 +49,8 @@ export default function PackageCarousel() {
   function goTo(index) {
     const nextIndex = (index + packages.length) % packages.length;
     const card = trackRef.current?.children[nextIndex];
-    card?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth";
+    card?.scrollIntoView({ behavior, block: "nearest", inline: "center" });
     setActiveIndex(nextIndex);
   }
 

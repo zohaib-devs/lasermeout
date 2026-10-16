@@ -190,3 +190,37 @@
   .overviewLink span { display: none; }
   .mobileArrow { display: block; height: .625rem; width: 1rem; }
 }
+
+@media (min-width: 768px) {
+  .section { display: block; font-family: "Inter Pencil", sans-serif; font-optical-sizing: none; height: 48.75rem; min-height: 0; padding: 0; scroll-margin-top: 5rem; }
+  .heading { display: block; max-width: none; }
+  .eyebrow { font-size: .75rem; font-weight: 700; left: 2rem; letter-spacing: -.0125rem; line-height: 1.2; margin: 0; position: absolute; top: 2.625rem; width: calc(100% - 4rem); }
+  .title { font-size: 4.25rem; font-weight: 700; left: 50%; letter-spacing: -.125rem; line-height: .95; position: absolute; top: 8.125rem; transform: translateX(-50%); width: calc(100% - 8rem); }
+  .title strong { align-items: center; display: flex; font-weight: 700; height: 5.25rem; justify-content: center; margin: .9375rem auto 0; padding: 0; width: 27rem; }
+  .intro { font-size: 1rem; left: 50%; line-height: 1.5; margin: 0; max-width: none; position: absolute; top: 21.125rem; transform: translateX(-50%); width: 32rem; }
+  .machine { height: 6.5625rem; left: calc(100% - 8.875rem); object-fit: contain; opacity: 1; right: auto; top: 1.875rem; transform-origin: top left; width: 7rem; z-index: 0; }
+  .packageControls { gap: .75rem; left: 50%; margin: 0; position: absolute; top: 30.375rem; transform: translateX(-50%); width: calc(100% - 10rem); }
+  .packageButton { border-color: #7b766e; color: #5d3e6b; font-size: .875rem; font-weight: 700; height: 3.25rem; min-height: 0; }
+  .packageButtonActive, .packageButton:hover { border-color: var(--ink); color: #fff; }
+  .packageNote { font-size: .8125rem; left: 50%; line-height: 1.45; margin: 0; position: absolute; top: 39.875rem; transform: translateX(-50%); width: calc(100% - 8rem); }
+  .overviewLink { align-items: center; display: flex; font-size: .75rem; font-weight: 700; height: 2.75rem; justify-content: space-between; left: 50%; letter-spacing: 0; margin: 0; padding: 0; position: absolute; top: 43.3125rem; transform: translateX(-50%); width: 15rem; }
+  .overviewLink span { display: none; }
+  .mobileArrow { display: block; height: .625rem; width: 1rem; }
+}
+
+@media (min-width: 1024px) {
+  .section { height: 51.25rem; scroll-margin-top: 5.5rem; }
+  .eyebrow { font-size: .8125rem; left: 6.666667%; width: 86.666666%; }
+  .title { font-size: 6rem; letter-spacing: -.175rem; top: 7.625rem; width: min(calc(100% - 8rem), 60rem); }
+  .title strong { height: 6.75rem; margin-top: .8125rem; width: 35rem; }
+  .intro { font-size: 1.125rem; top: 23.75rem; width: 40rem; }
+  .machine { height: 14.8125rem; left: calc(50% + 25.625rem); top: 9.5rem; width: 15.75rem; }
+  .packageControls { gap: 1rem; top: 32.375rem; width: min(calc(100% - 10rem), 45rem); }
+  .packageButton { font-size: .9375rem; height: 3.5rem; }
+  .packageNote { font-size: .875rem; top: 42.75rem; width: min(calc(100% - 8rem), 55rem); }
+  .overviewLink { font-size: .8125rem; top: 45.75rem; width: 16.25rem; }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .machine { height: 6.5625rem; left: calc(100% - 8.875rem); top: 1.875rem; width: 7rem; }
+}

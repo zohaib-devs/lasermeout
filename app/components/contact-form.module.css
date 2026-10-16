@@ -74,3 +74,30 @@
   .form button { font-size: .8125rem; font-weight: 700; min-height: 3.5rem; }
   .status:empty { display: none; }
 }
+
+@media (min-width: 768px) {
+  .section { font-family: "Inter Pencil", sans-serif; min-height: 53.75rem; padding: 2rem 4rem 2.375rem; scroll-margin-top: 5rem; }
+  .inner { max-width: 40rem; }
+  .eyebrow { font-size: .75rem; font-weight: 700; line-height: 1.2; margin: 0 0 2.0625rem; }
+  .title { font-size: 4.25rem; font-weight: 700; letter-spacing: -.035em; line-height: .95; }
+  .title span { align-items: center; display: flex; height: 5.125rem; justify-content: center; margin: .75rem auto 0; padding: 0; width: 19.5rem; }
+  .intro { font-size: 1rem; line-height: 1.5; margin: 1.6875rem auto 1.875rem; max-width: 32rem; }
+  .intro a { display: block; font-size: 1.125rem; font-weight: 700; line-height: 1.2; margin-top: .875rem; text-decoration: none; }
+  .phonePeriod { display: none; }
+  .form { gap: 1.5rem; }
+  .fields { column-gap: 1.5rem; row-gap: 1.5rem; }
+  .form label { min-width: 0; }
+  .form label span { color: #555049; font-size: .75rem; font-weight: 700; line-height: 1.2; margin: 0 0 .475rem .25rem; }
+  .form input, .form textarea { caret-color: var(--orange); font-size: 1rem; height: 3.25rem; min-height: 0; min-width: 0; }
+  .form textarea { height: 9rem; min-height: 9rem; }
+  .form button { font-size: .875rem; font-weight: 700; height: 3.5rem; transition: background-color .2s ease, color .2s ease; }
+  .status:empty { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .section { min-height: 56.25rem; scroll-margin-top: 5.5rem; }
+  .inner { max-width: 45rem; }
+  .title { font-size: 5rem; }
+  .title span { height: 5.75rem; width: 22rem; }
+  .intro { font-size: 1.0625rem; margin-top: 2.1875rem; max-width: 33.75rem; }
+}

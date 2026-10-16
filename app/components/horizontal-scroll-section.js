@@ -3,21 +3,39 @@
 import { useEffect, useRef } from "react";
 import styles from "./horizontal-scroll-section.module.css";
 
-export default function HorizontalScrollSection({ children, stackOnMobile = false }) {
+export default function HorizontalScrollSection({ children, stackOnMobile = false, compact = false }) {
   const containerRef = useRef(null);
   const trackRef = useRef(null);
+  const viewportRef = useRef(null);
+
+  function handleScrollKey(event) {
+    const viewport = event.currentTarget;
+    if (event.target !== viewport || viewport.tabIndex !== 0) return;
+    const step = viewport.clientWidth * .8;
+    const destinations = {
+      ArrowLeft: viewport.scrollLeft - step,
+      ArrowRight: viewport.scrollLeft + step,
+      Home: 0,
+      End: viewport.scrollWidth,
+    };
+    if (!(event.key in destinations)) return;
+    event.preventDefault();
+    viewport.scrollLeft = destinations[event.key];
+  }
 
   useEffect(() => {
     const container = containerRef.current;
     const track = trackRef.current;
+    const viewport = viewportRef.current;
 
-    if (!container || !track) return undefined;
+    if (!container || !track || !viewport) return undefined;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const desktopLayout = window.matchMedia("(min-width: 768px)");
     let frameId;
 
     function updatePosition() {
+      viewport.tabIndex = reducedMotion.matches && desktopLayout.matches ? 0 : -1;
       if (stackOnMobile && !desktopLayout.matches) {
         container.style.height = "auto";
         track.style.transform = "";
@@ -26,9 +44,11 @@ export default function HorizontalScrollSection({ children, stackOnMobile = fals
 
       const distance = reducedMotion.matches ? 0 : Math.max(0, track.scrollWidth - window.innerWidth);
 
-      container.style.height = distance ? `${Math.ceil(window.innerHeight + distance)}px` : "auto";
+      const sceneHeight = compact ? viewport.clientHeight : window.innerHeight;
+      const stickyTop = compact ? parseFloat(getComputedStyle(viewport).top) || 0 : 0;
+      container.style.height = distance ? `${Math.ceil(sceneHeight + distance)}px` : "auto";
 
-      const travelled = Math.min(Math.max(-container.getBoundingClientRect().top, 0), distance);
+      const travelled = Math.min(Math.max(stickyTop - container.getBoundingClientRect().top, 0), distance);
       track.style.transform = distance ? `translate3d(${-travelled}px, 0, 0)` : "";
     }
 
@@ -53,11 +73,11 @@ export default function HorizontalScrollSection({ children, stackOnMobile = fals
       reducedMotion.removeEventListener("change", requestUpdate);
       desktopLayout.removeEventListener("change", requestUpdate);
     };
-  }, [stackOnMobile]);
+  }, [stackOnMobile, compact]);
 
   return (
-    <div ref={containerRef} className={`${styles.container} ${stackOnMobile ? styles.stackOnMobile : ""}`}>
-      <div className={styles.viewport}>
+    <div ref={containerRef} className={`${styles.container} ${stackOnMobile ? styles.stackOnMobile : ""} ${compact ? styles.compact : ""}`}>
+      <div ref={viewportRef} className={styles.viewport} tabIndex={-1} role="region" aria-label={stackOnMobile ? "Three steps to touchable skin" : "Laser Me Out treatment information"} onKeyDown={handleScrollKey}>
         <div ref={trackRef} className={styles.track}>{children}</div>
       </div>
     </div>

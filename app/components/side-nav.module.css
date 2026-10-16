@@ -8,7 +8,7 @@
   inset: 0 0 auto;
   justify-content: space-between;
   padding: 0 .875rem;
-  position: fixed;
+  position: absolute;
   z-index: 40;
 }
 
@@ -103,7 +103,7 @@
 
 .consultationFull { display: none; }
 
-.instagram { display: none; }
+.instagram, .primaryLinks { display: none; }
 
 .overlay {
   background: var(--acid-yellow);
@@ -153,18 +153,11 @@
 .overlayOpen .kicker { transition-delay: 50ms; }
 .overlayOpen .menuFooter { transition-delay: 315ms; }
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .rail {
-    background: transparent;
-    backdrop-filter: none;
-    height: 5.5rem;
-    inset: 0 0 auto;
-    justify-content: flex-start;
-    padding: 0 clamp(1.5rem, 4vw, 4.5rem);
-    position: absolute;
-    width: 100%;
+    padding-inline: clamp(2rem, 4.4444vw, 6rem);
   }
-  .actions { left: 50%; margin-left: 0; position: absolute; right: auto; transform: translateX(-50%); }
+  .actions { margin-left: 0; }
   .logo { font-size: 1.28rem; line-height: .78; text-align: left; }
   .wordmark { max-width: none; }
   .wordmark span { text-shadow: 1px 1px #000, 2px 1px #000, 3px 2px #000, 4px 2px #000, 5px 3px #000, 6px 3px #000, 7px 4px #000, 8px 4px #000; }
@@ -218,7 +211,41 @@
 
 @media (prefers-reduced-motion: reduce) { .rail, .overlay, .menuIcon i, .menuPanel a, .consultation, .menuArt span:first-child, .menuPanel li, .kicker, .menuFooter { transition: none; } }
 
-/* Mobile header from the Pencil reference; larger layouts keep their existing styles. */
+/* Pencil header: shared tablet/desktop layout, with full navigation on desktop. */
+@media (min-width: 768px) {
+  .rail {
+    background: transparent;
+    backdrop-filter: none;
+    font-family: "Inter Pencil", sans-serif;
+    height: 5rem;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    position: absolute;
+  }
+  .logo { min-height: 2.75rem; transform: none; }
+  .wordmark { background: url("/images/header-wordmark.png") center / 100% 100% no-repeat; height: 1.875rem; width: 9.625rem; }
+  .wordmark span { display: none; }
+  .railMenuOpen .logo { background: none; padding: 0; }
+  .actions { gap: .75rem; left: auto; margin-left: 0; position: static; right: auto; transform: none; }
+  .consultation { font-size: .6875rem; font-weight: 700; letter-spacing: 0; min-height: 2.75rem; padding: .5rem .75rem; width: 10.5rem; }
+  .consultationFull { display: inline; }
+  .consultationShort, .menuLabel { display: none; }
+  .menuButton { margin: 0; min-height: 3rem; min-width: 3rem; padding: .5rem; }
+  .menuIcon { width: 1.375rem; }
+  .logo:focus-visible, .primaryLinks a:focus-visible, .consultation:focus-visible, .menuButton:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+}
+
+@media (min-width: 1024px) {
+  .rail { height: 5.5rem; padding-inline: clamp(2rem, 4.4444vw, 6rem); }
+  .wordmark { height: 2.1875rem; width: 11.25rem; }
+  .primaryLinks { align-items: center; display: flex; gap: clamp(1rem, 2.2222vw, 2rem); }
+  .primaryLinks a { align-items: center; color: var(--ink); display: inline-flex; font-size: .875rem; font-weight: 700; min-height: 2.75rem; text-decoration: none; }
+  .primaryLinks a:hover { text-decoration: underline; text-underline-offset: .25rem; }
+  .actions { gap: 1rem; }
+  .consultation { font-size: .75rem; min-height: 3rem; width: 13rem; }
+}
+
+/* Mobile header from the Pencil reference. */
 @media (max-width: 767px) {
   .rail {
     background: rgb(249 249 243 / 91%);

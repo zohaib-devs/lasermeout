@@ -69,6 +69,12 @@ export default function SideNav() {
           </span>
         </a>
 
+        <nav className={styles.primaryLinks} aria-label="Quick navigation">
+          {navigation.filter((item) => ["Treatments", "Packages", "Results", "Visit us"].includes(item.label)).map((item) => (
+            <a key={item.label} href={item.href} onClick={closeMenu}>{item.label}</a>
+          ))}
+        </nav>
+
         <div className={styles.actions}>
           <a className={styles.consultation} href="#consultation" onClick={closeMenu}>
             <span className={styles.consultationShort}>Book</span>

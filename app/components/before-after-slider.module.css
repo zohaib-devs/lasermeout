@@ -20,6 +20,30 @@
 .mobileArrow { display: none; }
 .mobileTouchSurface { display: none; }
 
+@media (min-width: 768px) {
+  .figure { align-self: start; font-family: "Inter Pencil", sans-serif; font-optical-sizing: none; }
+  .figure figcaption { font-size: .875rem; line-height: 1.4; margin-top: 1.5rem; }
+  .divider span { font-size: 0; height: 3rem; width: 3rem; }
+  .divider { width: .4375rem; }
+  .mobileArrow { display: block; }
+  .label { align-items: center; display: flex; font-size: .6875rem; font-weight: 700; height: 1.875rem; justify-content: center; letter-spacing: .05rem; padding: 0; top: .875rem; width: 4.5rem; }
+  .beforeLabel { left: .875rem; }
+  .afterLabel { right: .875rem; }
+  .range { height: 100%; }
+  .slider:focus-within .divider span { outline: 2px solid var(--ink); outline-offset: 3px; }
+}
+
+@media (min-width: 1024px) {
+  .label { font-size: .75rem; height: 2rem; top: 1rem; width: 5rem; }
+  .beforeLabel { left: 1rem; }
+  .afterLabel { right: 1rem; }
+  .figure figcaption { margin-top: 1.583333rem; }
+}
+
+@media (pointer: coarse) {
+  .mobileTouchSurface { cursor: ew-resize; display: block; inset: 0; position: absolute; touch-action: pan-y; z-index: 4; }
+}
+
 @media (max-width: 767px) {
   .divider { width: .4375rem; }
   .divider span { font-size: 0; height: 2.875rem; width: 2.875rem; }

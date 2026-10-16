@@ -13,6 +13,14 @@
   will-change: transform;
 }
 
+@media (min-width: 768px) {
+  .compact .viewport { height: 34.375rem; top: 5rem; }
+}
+
+@media (min-width: 1024px) {
+  .compact .viewport { height: 38.75rem; top: 5.5rem; }
+}
+
 @media (max-width: 767px) {
   .stackOnMobile .viewport {
     height: auto;
@@ -28,6 +36,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .viewport { height: auto; overflow: visible; position: static; }
-  .track { transform: none !important; }
+  .viewport, .compact .viewport { height: auto; max-width: 100%; overflow-x: auto; overflow-y: hidden; position: static; }
+  .viewport:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
+  .track { transform: none !important; will-change: auto; }
 }

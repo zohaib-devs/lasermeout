@@ -38,3 +38,33 @@
   .mapLink { border: 1px solid rgb(13 13 13 / 15%); border-radius: 1.25rem; }
   .mapLink span { align-items: center; bottom: 0; display: flex; font-size: .6875rem; font-weight: 700; justify-content: center; left: 0; min-height: 2.75rem; padding: .625rem; right: 0; }
 }
+
+@media (min-width: 768px) {
+  .section { font-family: "Inter Pencil", sans-serif; min-height: 57.5rem; padding: 2rem 4rem 3.75rem; scroll-margin-top: 5rem; }
+  .inner { max-width: 40rem; transform: none; }
+  .eyebrow { font-size: .75rem; font-weight: 700; line-height: 1.2; margin: 0 0 2.0625rem; }
+  .title { font-size: 4.25rem; font-weight: 700; letter-spacing: -.035em; line-height: .95; }
+  .title span { align-items: center; display: flex; height: 5.125rem; justify-content: center; margin: .75rem auto 0; padding: 0; width: 23.375rem; }
+  .details { gap: 3rem; margin: 2.9375rem 0 1.5625rem; max-width: none; text-align: left; }
+  .details article { padding-top: 1.5rem; }
+  .details h3 { font-size: 1.125rem; font-weight: 500; line-height: 1.2; margin: 0 0 1.125rem; }
+  .details address, .details p, .details a { font-size: 1rem; line-height: 1.5; }
+  .details article:first-child p { font-size: .9375rem; margin-top: .875rem; }
+  .details a { align-items: center; display: flex; font-weight: 700; margin: 0; min-height: 2rem; }
+  .details a:first-of-type { margin-top: .5rem; }
+  .mapLink { border-radius: 1.25rem; }
+  .mapLink span { font-weight: 700; opacity: 0; transition: opacity .2s ease; }
+  .mapLink:hover span, .mapLink:focus-visible span { opacity: 1; }
+}
+
+@media (min-width: 1024px) {
+  .section { min-height: 61.25rem; scroll-margin-top: 5.5rem; }
+  .inner { max-width: 45rem; }
+  .title { font-size: 5rem; }
+  .title span { height: 5.75rem; width: 26.75rem; }
+  .details { margin-top: 3.0625rem; }
+}
+
+@media (min-width: 768px) and (hover: none) {
+  .mapLink span { opacity: 1; }
+}

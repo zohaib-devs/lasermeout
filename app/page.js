@@ -8,10 +8,12 @@ import BeforeAfterSlider from "./components/before-after-slider";
 import ContactForm from "./components/contact-form";
 import LocationSection from "./components/location-section";
 import ProofPoints from "./components/proof-points";
+import SectionReveal from "./components/section-reveal";
 
 export default function Home() {
   return (
     <>
+      <div className={styles.heroScene}>
       <main id="top" className={styles.hero}>
         <div className={styles.textAndFlyingModel}>
           <div className={styles.heroTextLayer}>
@@ -30,7 +32,7 @@ export default function Home() {
               width={1024}
               height={1536}
               preload
-              sizes="(max-width: 767px) 38vw, 38vw"
+              sizes="(max-width: 767px) 38vw, (max-width: 1023px) 216px, 252px"
             />
           </div>
         </div>
@@ -41,7 +43,7 @@ export default function Home() {
           width={1293}
           height={1200}
           preload
-          sizes="(max-width: 767px) 26vw, 23vw"
+          sizes="(max-width: 767px) 26vw, (max-width: 1023px) 116px, 156px"
         />
         <span className={styles.heroLocations}>London + Birmingham</span>
       </main>
@@ -52,7 +54,7 @@ export default function Home() {
           alt="Soprano Titanium laser applicator"
           width={1086}
           height={1448}
-          sizes="(max-width: 767px) 22vw, 19vw"
+          sizes="(max-width: 767px) 22vw, (max-width: 1023px) 72px, 80px"
         />
         <div className={styles.sopranoContent}>
           <h2 id="soprano-title" className={styles.sopranoTitle}>
@@ -71,13 +73,14 @@ export default function Home() {
           alt="Soprano Titanium laser handpiece"
           width={1122}
           height={1402}
-          sizes="(max-width: 767px) 22vw, 16vw"
+          sizes="(max-width: 767px) 22vw, (max-width: 1023px) 72px, 80px"
         />
       </section>
       <div className={styles.blackContainer}>
         <span className={styles.blackContainerText}>
           Keeping you smooth since 2022
         </span>
+      </div>
       </div>
       <section id="consultation" className={styles.whiteSection} aria-labelledby="consultation-title">
         <h2 id="consultation-title" className={styles.consultationTitle}>
@@ -97,7 +100,7 @@ export default function Home() {
               src="/images/london.png"
               alt="Laser Me Out London clinic exterior"
               fill
-              sizes="(max-width: 767px) 53vw, 30vw"
+              sizes="(max-width: 767px) 53vw, (max-width: 1023px) 258px, 308px"
             />
           </a>
           <a
@@ -121,7 +124,7 @@ export default function Home() {
               src="/images/girmingham.png"
               alt="Laser Me Out Birmingham clinic exterior"
               fill
-              sizes="(max-width: 767px) 55vw, 23vw"
+              sizes="(max-width: 767px) 55vw, (max-width: 1023px) 270px, 322px"
             />
           </a>
           <a
@@ -138,6 +141,7 @@ export default function Home() {
       <TreatmentFinder />
       <HorizontalScrollSection stackOnMobile>
       <section id="fuzz-free" className={styles.fuzzFreeZone} aria-labelledby="fuzz-free-title">
+        <div className={styles.fuzzPanel}>
         <div className={styles.fuzzFreeCopy}>
           <h2 id="fuzz-free-title">
             <span>This is a fuzz</span>
@@ -158,7 +162,7 @@ export default function Home() {
             alt="Illustrated strawberry with smooth legs"
             width={1024}
             height={1536}
-            sizes="(max-width: 767px) 50vw, 30vw"
+            sizes="(max-width: 767px) 50vw, (max-width: 1023px) 174px, 280px"
           />
         </div>
         <div className={styles.shavingFrame}>
@@ -168,7 +172,7 @@ export default function Home() {
             alt="Illustrated razor"
             width={1254}
             height={1254}
-            sizes="(max-width: 767px) 23vw, 18rem"
+            sizes="(max-width: 767px) 23vw, (max-width: 1023px) 124px, 180px"
           />
           <Image
             className={styles.cactusImage}
@@ -176,11 +180,13 @@ export default function Home() {
             alt="Illustrated prickly cactus"
             width={1254}
             height={1254}
-            sizes="(max-width: 767px) 58vw, 18rem"
+            sizes="(max-width: 767px) 58vw, (max-width: 1023px) 260px, 416px"
           />
         </div>
+        </div>
+        <div className={styles.lmoPanel}>
         <div id="lmo-difference" className={styles.lmoDifferenceCopy}>
-          <h2 id="lmo-difference-title">The LMO difference</h2>
+          <h2 id="lmo-difference-title"><span>The LMO</span>{" "}<span>difference</span></h2>
           <p className={styles.lmoDifferenceText}>We’re not a laser chop shop package deal you got for 50% off online or a cheap DIY home kit you impulse bought on the ‘gram. Our clinic is located in London’s medical district and uses top-of-the-range equipment with expert prep practices to give you the trans-formative skinsperience you’re looking for. It’s time to invest adult money into your skin so you can get real results.</p>
         </div>
         <div className={styles.shireenFrame}>
@@ -191,12 +197,14 @@ export default function Home() {
               alt="Shireen Forster at the clinic"
               width={500}
               height={500}
-              sizes="(max-width: 767px) 58vw, 12vw"
+              sizes="(max-width: 767px) 58vw, (max-width: 1023px) 230px, 302px"
             />
           </div>
           <p className={styles.shireenName}>Shireen Forster</p>
           <p className={styles.shireenRole}>Founder, Laser Me Out</p>
         </div>
+        </div>
+        <div className={styles.whoPanel}>
         <section id="who-we-help" className={styles.whoWeHelp} aria-labelledby="who-we-help-title">
           <h2 id="who-we-help-title">Who we help</h2>
           <ul>
@@ -213,17 +221,18 @@ export default function Home() {
             alt="Illustrated strawberry with smooth legs"
             width={1024}
             height={1536}
-            sizes="(max-width: 767px) 56vw, 18vw"
+            sizes="(max-width: 767px) 56vw, (max-width: 1023px) 240px, 280px"
           />
+        </div>
         </div>
         <section id="newbie-friendly" className={styles.newbieFriendly} aria-labelledby="newbie-friendly-title">
           <div className={styles.newbieCopy}>
-            <h2 id="newbie-friendly-title">Newbie friendly</h2>
+            <h2 id="newbie-friendly-title">Newbie<br />friendly</h2>
             <p>We think it’s super important for newbies to come to a high-quality clinic like ours. Why? For the prep work. Poor prep leads to bad results and we want your first experience to be excellent. So, we always recommend you get the shaving add-on with your service too. Then you can just rock up and we’ll do the rest! Simple! We’ll talk you through every step before your first treatment. You’ll always know what to expect and how to care for your skin afterwards. We’ve got you.</p>
           </div>
           <div className={styles.newbieRaja}>
             <p className={styles.rajaBubble}>
-              <Image className={styles.rajaBubbleShape} src="/images/raja-speech-bubble.png" alt="" width={1654} height={951} sizes="(max-width: 767px) 240px, 1px" />
+              <Image className={styles.rajaBubbleShape} src="/images/raja-speech-bubble.png" alt="" width={1654} height={951} sizes="(max-width: 767px) 240px, (max-width: 1023px) 270px, 340px" />
               <span className={styles.rajaBubbleText}>Speak to an<br />expert</span>
             </p>
             <Image
@@ -232,7 +241,7 @@ export default function Home() {
               alt="Raja, Laser Me Out marketing manager"
               width={500}
               height={561}
-              sizes="(max-width: 767px) 54vw, 22vw"
+              sizes="(max-width: 767px) 54vw, (max-width: 1023px) 202px, 270px"
             />
             <p className={styles.rajaBadge}><strong>Raja</strong><span>Marketing manager</span></p>
           </div>
@@ -256,7 +265,7 @@ export default function Home() {
             alt="Soprano Titanium laser handpiece"
             width={1122}
             height={1402}
-            sizes="(max-width: 767px) 47vw, 18vw"
+            sizes="(max-width: 767px) 47vw, (max-width: 1023px) 240px, 264px"
           />
         </div>
       </section>
@@ -272,7 +281,7 @@ export default function Home() {
       <section id="comparison" className={styles.resultsComparison} aria-label="Laser hair removal before and after comparison">
         <BeforeAfterSlider />
       </section>
-      <section id="why-choose-us" className={styles.whyChooseUs} aria-labelledby="why-choose-us-title">
+      <SectionReveal id="why-choose-us" labelledBy="why-choose-us-title" className={styles.whyChooseUs}>
         <div className={styles.whyChooseUsCard}>
           <span className={styles.justFacts}>Just facts</span>
           <div className={styles.whyChooseUsCopy}>
@@ -294,8 +303,8 @@ export default function Home() {
             sizes="(max-width: 767px) 67vw, 22rem"
           />
         </div>
-      </section>
-      <section id="how-it-works" className={styles.howItWorks} aria-labelledby="how-it-works-title">
+      </SectionReveal>
+      <SectionReveal id="how-it-works" labelledBy="how-it-works-title" className={styles.howItWorks}>
         <div className={styles.howItWorksIntro}>
           <div className={styles.rabiaProfile}>
             <Image
@@ -322,12 +331,12 @@ export default function Home() {
           <h2 id="how-it-works-title">How it works</h2>
           <p>We do laser right! Not only is our machine top-of-the-line, but it has a cooling tip to keep treatments gentle. It works on all skin tones (even tans) and the 3 wavelengths mean it banishes hair faster than other laser hair removal machines. Plus, our unique dry brushing approach takes all your exfoliation worries away for perfectly-prepped skin every time.</p>
           <nav className={styles.howItWorksLinks} aria-label="How it works actions">
-            <a href="#treatments">Book now</a>
+            <a href="#consultation">Book now</a>
             <a href="#contact">Talk to us</a>
           </nav>
         </article>
-      </section>
-      <HorizontalScrollSection stackOnMobile>
+      </SectionReveal>
+      <HorizontalScrollSection stackOnMobile compact>
         <section id="treatment-steps" className={styles.treatmentSteps} aria-label="The three steps to touchable skin">
           <article className={styles.treatmentStep}>
             <span className={styles.stepNumber}>Step one</span>
@@ -498,6 +507,7 @@ export default function Home() {
         />
         <div className={styles.footerInner}>
           <a className={styles.footerLogo} href="#top" aria-label="Laser Me Out home">
+            <Image className={styles.footerStackedLogo} src="/images/footer-stacked-logo.png" alt="" width={140} height={131} sizes="(max-width: 1023px) 100px, 140px" />
             <span>Laser</span><span>Me</span><span>Out</span>
             <Image className={styles.footerMobileLogo} src="/images/header-wordmark.png" alt="" width={360} height={90} sizes="180px" />
           </a>

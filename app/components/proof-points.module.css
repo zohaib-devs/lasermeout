@@ -26,3 +26,28 @@
   .copy p { font-size: 1rem; line-height: 1.45; max-width: none; }
   .art img { height: 14.375rem; max-width: 100%; width: 14.375rem; }
 }
+
+@media (min-width: 768px) {
+  .section { font-family: "Inter Pencil", sans-serif; padding: 0; }
+  .point { align-items: start; column-gap: 2.875rem; grid-template-columns: minmax(0, 23.125rem) minmax(0, 18rem); height: 28.75rem; max-width: 44rem; min-height: 0; padding: 4.25rem 0 0; }
+  .copy { max-width: none; }
+  .copy h2 { font-size: 2.125rem; font-weight: 700; letter-spacing: -.03em; line-height: .95; margin: 0 0 2rem; max-width: none; }
+  .copy h2 span { display: block; }
+  .copy p { font-size: 1rem; line-height: 1.5; max-width: 22.5rem; }
+  .art { padding-top: 0; }
+  .art img { height: 18rem; max-width: 100%; width: 18rem; }
+  .reverse { column-gap: 3rem; grid-template-columns: minmax(0, 19rem) minmax(0, 22rem); }
+  .reverse .art { transform: translate(-1rem, -3rem); }
+  .reverse .art img { height: 20.625rem; max-width: none; width: 20.625rem; }
+}
+
+@media (min-width: 1024px) {
+  .point { column-gap: clamp(4rem, 13.8889vw, 12.5rem); grid-template-columns: minmax(0, 27.5rem) minmax(0, 20rem); height: 32.5rem; max-width: 62.5rem; padding-top: 6.5rem; }
+  .copy h2 { font-size: 2.75rem; margin-bottom: 2rem; }
+  .copy p { font-size: 1.125rem; max-width: none; }
+  .art { margin-top: -1.375rem; }
+  .art img { height: 20rem; width: 20rem; }
+  .reverse { grid-template-columns: minmax(0, 20rem) minmax(0, 27.5rem); }
+  .reverse .art { transform: none; }
+  .reverse .art img { height: 23rem; max-width: none; width: 23rem; }
+}

@@ -79,13 +79,49 @@
 
 @keyframes float { 0%, 100% { transform: translateY(6%) rotate(-14deg); } 50% { transform: translateY(-6%) rotate(-14deg); } }
 
+/* Pencil tablet composition; interaction and motion rules above remain shared. */
 @media (min-width: 768px) {
-  .section { gap: 3.5rem; padding-inline: clamp(2rem, 7vw, 7rem); }
-  .footerNote { margin-top: -1rem; }
+  .section { display: block; font-family: "Inter Pencil", sans-serif; height: 73.75rem; min-height: 0; padding: 0; scroll-margin-top: 5rem; }
+  .machine { height: 11.451875rem; object-fit: contain; right: 7.5078%; top: -3.358125rem; width: 12.165rem; }
+  .intro, .finder { display: block; margin: 0; max-width: none; position: static; width: 100%; }
+  .intro h2 { font-size: .75rem; font-weight: 700; left: 2rem; letter-spacing: .0125rem; line-height: 1.2; position: absolute; top: 4rem; width: calc(100% - 4rem); }
+  .tagline { font-size: 3rem; font-weight: 700; left: 50%; letter-spacing: -.1rem; line-height: .9; margin: 0; max-width: none; position: absolute; top: 6.125rem; transform: translateX(-50%); width: calc(100% - 4rem); }
+  .taglineLine { display: block; }
+  .taglineLine + .taglineLine { margin-top: .375rem; }
+  .taglineLine:nth-child(2) { align-items: center; display: flex; gap: .375rem; height: 3.25rem; justify-content: center; }
+  .forever { padding: .0625rem .375rem .1875rem; }
+  .introCopy { font-size: 1rem; left: 50%; line-height: 1.5; margin: 0; max-width: none; position: absolute; top: 17.5rem; transform: translateX(-50%); width: min(calc(100% - 4rem), 36.5rem); }
+  .tabs { gap: .75rem; height: 3rem; left: 50%; position: absolute; top: 25.625rem; transform: translateX(-50%); width: 12.5rem; }
+  .tab, .tabActive { flex-shrink: 0; font-size: .8125rem; font-weight: 700; min-height: 3rem; padding: .5rem; }
+  .tab:first-child, .tabActive:first-child { width: 7rem; }
+  .tab:last-child, .tabActive:last-child { width: 4.75rem; }
+  .mustHave { font-size: 2.5rem; font-weight: 700; left: 50%; letter-spacing: -.08125rem; line-height: .86; margin: 0; position: absolute; top: 31.25rem; transform: translateX(-50%); width: 35rem; }
+  .mustHave strong { margin-top: .8875rem; }
+  .featuredAreaButtons { display: block; margin: 0; position: static; }
+  .featuredAreaStack { gap: .75rem; left: 50%; position: absolute; top: 41rem; transform: translateX(-50%); width: 10.75rem; }
+  .featuredArea, .featuredAreaActive { border-radius: 1.375rem; font-size: .8125rem; font-weight: 700; height: 3rem; min-width: 0; padding: .5rem; width: 100%; }
+  .featuredArrows { gap: .75rem; position: absolute; right: 2rem; top: 43.125rem; }
+  .featuredArrows button { height: 2.75rem; width: 2.75rem; }
+  .bodyArt { left: 50%; margin: 0; max-width: none; position: absolute; top: 53.5rem; transform: translateX(-50%); width: 14rem; }
+  .footerNote { font-size: .75rem; font-weight: 700; left: 50%; letter-spacing: .00625rem; line-height: 1.3; margin: 0; max-width: none; position: absolute; top: 70rem; transform: translateX(-50%); width: calc(100% - 8rem); }
+  .tab:focus-visible, .tabActive:focus-visible, .featuredArea:focus-visible, .featuredAreaActive:focus-visible, .featuredArrows button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 }
 
-@media (min-width: 992px) {
-  .section { padding-top: 1.25rem; }
+@media (min-width: 1024px) {
+  .section { scroll-margin-top: 5.5rem; }
+  .machine { height: 19.519375rem; right: 7.28125%; top: -5.201875rem; width: 20.735625rem; }
+  .intro h2 { font-size: .8125rem; left: 6rem; top: 3.5rem; width: calc(100% - 12rem); }
+  .tagline { font-size: 3.25rem; letter-spacing: -.1125rem; top: 5.75rem; width: 52.5rem; }
+  .taglineLine + .taglineLine { margin-top: .5rem; }
+  .taglineLine:nth-child(2) { height: 3.4375rem; }
+  .introCopy { font-size: 1.125rem; top: 17.75rem; width: 40rem; }
+  .tabs { top: 25rem; }
+  .mustHave { font-size: 3rem; letter-spacing: -.0875rem; top: 30rem; width: 45rem; }
+  .mustHave strong { margin-top: .965rem; }
+  .featuredAreaStack { top: 40.625rem; }
+  .featuredArrows { right: 4rem; top: 42.75rem; }
+  .bodyArt { top: 53.125rem; width: 15rem; }
+  .footerNote { font-size: .8125rem; letter-spacing: .009375rem; line-height: 1.15; width: calc(100% - 12rem); }
 }
 
 @media (prefers-reduced-motion: reduce) { .machine { animation: none; } .tab, .tabActive { transition: none; } }
